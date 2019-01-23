@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClassRecipes.Core\ClassRecipes.Core.csproj" />
+    <ProjectReference Include="..\ClassRecipes.Ingredients\ClassRecipes.Ingredients.csproj" />
+    <ProjectReference Include="..\ClassRecipes.Tools\ClassRecipes.Tools.csproj" />
+  </ItemGroup>
+
+</Project>

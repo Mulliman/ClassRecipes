@@ -5,12 +5,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Recipes\Data\" />
+    <Folder Include="Areas\Recipes\Models\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClassRecipes.Core\ClassRecipes.Core.csproj" />
+    <ProjectReference Include="..\ClassRecipes.Ingredients\ClassRecipes.Ingredients.csproj" />
+    <ProjectReference Include="..\ClassRecipes.Recipes\ClassRecipes.Recipes.csproj" />
+    <ProjectReference Include="..\ClassRecipes.Tools\ClassRecipes.Tools.csproj" />
   </ItemGroup>
 
 </Project>
