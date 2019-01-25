@@ -1,0 +1,29 @@
+﻿@import "../_variables.scss";
+
+.card.card-border .card-content {
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color ;
+    border-bottom: 1px solid $border-color;
+}
+
+.card.card-border.with-action.no-image .card-content {
+    border-top: 1px solid $border-color;
+}
+
+.card.card-border.with-action .card-action {
+    border-left: 1px solid $border-color;
+    border-right: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    border-top: none;
+}
+
+.card-action.big-action {
+    display: block
+}
+
+.card .card-action.big-action span:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+    margin-right: 24px;
+    -webkit-transition: color .3s ease;
+    transition: color .3s ease;
+    text-transform: uppercase;
+}

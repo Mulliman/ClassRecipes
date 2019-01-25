@@ -5,9 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="Areas\Recipes\scss\Base\recipe-base.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Areas\Recipes\Data\" />
     <Folder Include="Areas\Recipes\Models\" />
-    <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\img\" />
     <Folder Include="wwwroot\js\" />
   </ItemGroup>
