@@ -1,9 +1,10 @@
 ﻿using ClassRecipes.Core.Purchasing;
+using ClassRecipes.Core.Quantities;
 using System.Collections.Generic;
 
 namespace ClassRecipes.Core
 {
-    public class Ingredient
+    public class Ingredient :  IPluralisable
     {
         private string _plural;
 
@@ -27,6 +28,8 @@ namespace ClassRecipes.Core
         }
 
         public string Name { get; set; }
+
+        public string Singular => Name;
 
         public string Plural => _plural ?? (Name + "s");
 

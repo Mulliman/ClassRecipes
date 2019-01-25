@@ -1,0 +1,22 @@
+﻿@model ClassRecipes.Web.Areas.Common.Models.CollectionWithHeaderModel
+
+@if(Model == null)
+{
+    return;
+}
+
+<ul class="collection with-header">
+    <li href="#!" class="collection-header"><h4>@Model.Header</h4></li>
+
+    @foreach (var item in Model.Items)
+    {
+        if(string.IsNullOrWhiteSpace(item.Label))
+        {
+            <li href="#!" class="collection-item">@item.Text</li>
+        }
+        else
+        {
+            <li href="#!" class="collection-item"><span class="badge">@item.Label</span>@item.Text</li>
+        }
+    }
+</ul>

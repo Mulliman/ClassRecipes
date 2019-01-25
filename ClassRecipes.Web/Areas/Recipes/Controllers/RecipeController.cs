@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ClassRecipes.Core.Repository;
+using ClassRecipes.Web.Areas.Recipes.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ClassRecipes.Web.Areas.Recipes.Controllers
@@ -27,7 +28,9 @@ namespace ClassRecipes.Web.Areas.Recipes.Controllers
                 return NotFound();
             }
 
-            return View("Recipe", recipe);
+            var viewModel = new RecipePageModel(recipe);
+
+            return View("Recipe", viewModel);
         }
     }
 }

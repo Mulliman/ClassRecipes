@@ -1,6 +1,6 @@
 ﻿namespace ClassRecipes.Core.Quantities
 {
-    public class RangeQuantity<T> : IQuantity<T>
+    public class RangeQuantity<T> : IQuantity<T> where T : IPluralisable
     {
         public RangeQuantity(T item, double lowerAmount, double higherAmount, Unit unit = null)
         {
@@ -18,9 +18,21 @@
         
         public Unit Unit { get; set; }
 
+        public string GetCorrectSingularOrPlural()
+        {
+            if(Item == null)
+            {
+                return null;
+            }
+
+            return Item.Plural;
+        }
+
         public string GetQuantityLabel()
         {
-            return $"{LowerAmount}-{HigherAmount} {Unit.Plural}";
+            return Unit == null 
+                ? $"{LowerAmount}-{HigherAmount}"
+                : $"{LowerAmount}-{HigherAmount} {Unit.Plural}";
         }
     }
 }

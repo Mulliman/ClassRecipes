@@ -4,7 +4,7 @@ namespace ClassRecipes.Ingredients
 {
     public static class Eggs
     {
-        public static Ingredient LargeEggs = new Ingredient("Large Eggs");
-        public static Ingredient MediumEggs = new Ingredient("Medium Eggs");
+        public static Ingredient LargeEggs = new Ingredient("Large Egg");
+        public static Ingredient MediumEggs = new Ingredient("Medium Egg");
     }
 }

@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <MvcRazorExcludeRefAssembliesFromPublish>false</MvcRazorExcludeRefAssembliesFromPublish>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,7 +11,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\Recipes\Data\" />
-    <Folder Include="Areas\Recipes\Models\" />
     <Folder Include="wwwroot\img\" />
     <Folder Include="wwwroot\js\" />
   </ItemGroup>
@@ -28,4 +28,12 @@
     <ProjectReference Include="..\ClassRecipes.Tools\ClassRecipes.Tools.csproj" />
   </ItemGroup>
 
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="echo &quot;App Offline&quot; /a &gt; $(ProjectDir)app_offline.htm" />
+  </Target>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="del $(ProjectDir)app_offline.htm" />
+  </Target>
 </Project>

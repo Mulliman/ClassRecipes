@@ -1,9 +1,10 @@
 ﻿using ClassRecipes.Core.Purchasing;
+using ClassRecipes.Core.Quantities;
 using System.Collections.Generic;
 
 namespace ClassRecipes.Core
 {
-    public class Tool
+    public class Tool : IPluralisable
     {
         private string _plural;
 
@@ -27,7 +28,9 @@ namespace ClassRecipes.Core
         }
 
         public string Name { get; set; }
-        
+
+        public string Singular => Name;
+
         public string Plural => _plural ?? (Name + "s");
 
         public IEnumerable<BuyLink> BuyLinks { get; set; }
