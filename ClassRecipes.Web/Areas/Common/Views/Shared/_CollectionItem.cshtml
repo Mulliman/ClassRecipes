@@ -1,0 +1,15 @@
+﻿@model ClassRecipes.Web.Areas.Common.Models.CollectionItemModel
+
+@if(Model == null)
+{
+    return;
+}
+
+@if(string.IsNullOrWhiteSpace(Model.Label))
+{
+    <li href="#!" class="collection-item">@Model.Text</li>
+}
+else
+{
+    <li href="#!" class="collection-item"><span class="badge">@Model.Label</span>@Model.Text</li>
+}

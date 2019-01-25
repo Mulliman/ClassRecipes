@@ -1,24 +1,39 @@
-﻿<div class="section no-spacing">
+﻿@model  ClassRecipes.Web.Areas.Recipes.Models.StepModel
+
+@if (Model?.Step == null)
+{
+    return;
+}
+
+<div class="section no-spacing">
     <div class="row no-spacing">
 
         <!-- Non Mobile -->
         <div class="hide-on-small-only">
             <div class="col s12 m5 ">
-                <ul class="collection with-header">
-                    <li href="#!" class="collection-header"><h4>Step 2</h4></li>
-                    <li href="#!" class="collection-item"><span class="badge">2</span>Baking Tins</li>
-                    <li href="#!" class="collection-item"><span class="badge">2</span>Baking Paper</li>
-                </ul>
+                @await Html.PartialAsync("~/Areas/Common/Views/Shared/_CollectionWithHeader.cshtml", Model.ToolsAndIngredientsCollection)
             </div>
 
             <div class="col s12 m7">
                 <div class="card z-depth-0 card-border with-action no-image">
                     <div class="card-content">
-                        <p>
-                            Line 2 baking tins with baking paper.
-                        </p>
+                        @if (Model?.Step.TextLines?.Any() == true)
+                        {
+                            foreach (var textLine in Model?.Step?.TextLines)
+                            {
+                                <p>@textLine</p>
+                            }
+                        }
+
+                        @if (Model?.Step.Alerts?.Any() == true)
+                        {
+                            @foreach (var alert in Model?.Step?.Alerts)
+                            {
+                                <p>@alert.Text</p>
+                            }
+                        }
                     </div>
-                    <a href="#Step3" class="card-action big-action brand-green lighten-4 ">
+                    <a href="#Step@Model.NextStepIndex" class="card-action big-action brand-green lighten-4 ">
                         <span class="brand-green-text darken-3">Next step</span><i class="material-icons right brand-green-text darken-3">arrow_downward</i>
                     </a>
                 </div>
@@ -29,23 +44,38 @@
         <div class="hide-on-med-and-up mobile-recipe-card">
             <div class="col s12 z-depth-1 no-padding">
                 <div class="card z-depth-0 card-border header-no-image">
-                    <h4 class="header-text">Step 2</h4>
+                    <h4 class="header-text">Step @Model.Index</h4>
                 </div>
 
                 <div class="clearfix"></div>
 
                 <ul class="collection no-margin no-side-borders-on-small">
-                    <li href="#!" class="collection-item"><span class="badge">2</span>Baking Tins</li>
-                    <li href="#!" class="collection-item"><span class="badge">2</span>Baking Paper</li>
+                    @foreach (var toolOrIngredient in Model?.ToolsAndIngredientsCollection?.Items)
+                    {
+                        @await Html.PartialAsync("~/Areas/Common/Views/Shared/_CollectionItem.cshtml", toolOrIngredient)
+                    }
                 </ul>
 
                 <div class="card z-depth-0 card-border with-action no-margin">
                     <div class="card-content no-side-borders-on-small">
-                        <p>
-                            Line 2 baking tins with baking paper.
-                        </p>
-                    </div>
-                    <a href="#Step3" class="card-action big-action brand-green lighten-4 ">
+                        @if (Model?.Step.TextLines?.Any() == true)
+                        {
+                            foreach (var textLine in Model?.Step?.TextLines)
+                            {
+                                <p>@textLine</p>
+                            }
+                        }
+
+                        @if (Model?.Step.Alerts?.Any() == true)
+                        {
+                            @foreach (var alert in Model?.Step?.Alerts)
+                            {
+                                <p>@alert.Text</p>
+                            }
+                        }
+                        </div>
+
+                    <a href="#Step@Model.NextStepIndex" class="card-action big-action brand-green lighten-4 ">
                         <span class="brand-green-text darken-3">Next step</span><i class="material-icons right brand-green-text darken-3">arrow_downward</i>
                     </a>
                 </div>

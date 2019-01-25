@@ -28,6 +28,12 @@
     <ProjectReference Include="..\ClassRecipes.Tools\ClassRecipes.Tools.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Areas\Common\Views\Shared\_CollectionItem.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+
 
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Exec Command="echo &quot;App Offline&quot; /a &gt; $(ProjectDir)app_offline.htm" />
