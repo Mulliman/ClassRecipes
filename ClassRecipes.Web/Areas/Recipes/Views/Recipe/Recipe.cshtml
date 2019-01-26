@@ -45,15 +45,19 @@
 
     @foreach (var step in Model.Recipe.Steps)
     {
-        var stepModel = new ClassRecipes.Web.Areas.Recipes.Models.StepModel(step, stepNumber);
+        var isLastStep = Model.IsLastStep(stepNumber);
+
+        var stepModel = new ClassRecipes.Web.Areas.Recipes.Models.StepModel(step, stepNumber, isLastStep);
 
         @await Html.PartialAsync("_Step", stepModel)
 
-        <div id="@("Step" + (stepNumber + 1))" class="divider big-space"></div>
+        @if (!isLastStep)
+        {
+            <div id="@("Step" + (stepNumber + 1))" class="divider big-space"></div>
 
-        stepNumber++;
+            stepNumber++;
+        }
     }
-
 
     <div class="row center section-button-row">
         <a href="#Finishing" class="btn-large brand-green-border-button darken-2 z-depth-0">Finishing off</a>

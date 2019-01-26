@@ -24,5 +24,10 @@ namespace ClassRecipes.Web.Areas.Recipes.Models
             Header = "Equipment",
             Items = Recipe.Tools.Select(i => new CollectionItemModel(i.GetCorrectSingularOrPlural(), i.GetQuantityLabel()))
         };
+
+        public bool IsLastStep(int currentStepNumber)
+        {
+            return (currentStepNumber) >= Recipe.Steps.Count;
+        }
     }
 }

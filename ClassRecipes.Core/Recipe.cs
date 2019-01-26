@@ -28,7 +28,7 @@ namespace ClassRecipes.Core
 
         public IEnumerable<IQuantity<Tool>> Tools { get; set; }
 
-        public IEnumerable<Step> Steps { get; set; }
+        public IList<Step> Steps { get; set; }
 
         public IEnumerable<string> FinishingImageUrls { get; set; }
 

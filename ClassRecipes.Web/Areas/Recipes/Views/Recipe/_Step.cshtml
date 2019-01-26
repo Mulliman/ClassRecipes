@@ -1,4 +1,4 @@
-﻿@model  ClassRecipes.Web.Areas.Recipes.Models.StepModel
+﻿@model ClassRecipes.Web.Areas.Recipes.Models.StepModel
 
 @if (Model?.Step == null)
 {
@@ -33,9 +33,13 @@
                             }
                         }
                     </div>
-                    <a href="#Step@(Model.NextStepIndex)" class="card-action big-action brand-green lighten-4 ">
-                        <span class="brand-green-text darken-3">Next step</span><i class="material-icons right brand-green-text darken-3">arrow_downward</i>
-                    </a>
+
+                    @if (!Model.IsLastStep)
+                    {
+                        <a href="#Step@(Model.NextStepIndex)" class="card-action big-action brand-green lighten-4 ">
+                            <span class="brand-green-text darken-3">Next step</span><i class="material-icons right brand-green-text darken-3">arrow_downward</i>
+                        </a>
+                    }
                 </div>
             </div>
         </div>
@@ -73,11 +77,14 @@
                                 <p>@alert.Text</p>
                             }
                         }
-                        </div>
+                    </div>
 
-                    <a href="#Step@(Model.NextStepIndex)" class="card-action big-action brand-green lighten-4 ">
-                        <span class="brand-green-text darken-3">Next step</span><i class="material-icons right brand-green-text darken-3">arrow_downward</i>
-                    </a>
+                    @if (!Model.IsLastStep)
+                    {
+                        <a href="#Step@(Model.NextStepIndex)" class="card-action big-action brand-green lighten-4 ">
+                            <span class="brand-green-text darken-3">Next step</span><i class="material-icons right brand-green-text darken-3">arrow_downward</i>
+                        </a>
+                    }
                 </div>
             </div>
         </div>

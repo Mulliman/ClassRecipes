@@ -7,15 +7,18 @@ namespace ClassRecipes.Web.Areas.Recipes.Models
 {
     public class StepModel
     {
-        public StepModel(Step step, int index)
+        public StepModel(Step step, int index, bool isLastStep)
         {
             Step = step;
             Index = index;
+            IsLastStep = isLastStep;
         }
 
         public Step Step { get; }
 
         public int Index { get; }
+
+        public bool IsLastStep { get; }
 
         public int NextStepIndex => Index + 1;
 
