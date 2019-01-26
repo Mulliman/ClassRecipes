@@ -3,7 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <MvcRazorExcludeRefAssembliesFromPublish>false</MvcRazorExcludeRefAssembliesFromPublish>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Areas\Common\ts\common.ts" />
+    <None Remove="Areas\Common\ts\smooth-scroll.ts" />
+    <None Remove="Areas\Recipes\Themes\sam\theme-sam.ts" />
+  </ItemGroup>
 
   <ItemGroup>
     <Content Include="Areas\Recipes\scss\Base\recipe-base.scss" />
@@ -12,7 +19,6 @@
   <ItemGroup>
     <Folder Include="Areas\Recipes\Data\" />
     <Folder Include="wwwroot\img\" />
-    <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +35,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="Areas\Common\ts\smooth-scroll.ts" />
+    <TypeScriptCompile Include="Areas\Common\ts\common.ts" />
+    <TypeScriptCompile Include="Areas\Recipes\Themes\sam\ts\theme-sam.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Update="Areas\Common\Views\Shared\_CollectionItem.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
@@ -42,4 +54,20 @@
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="del $(ProjectDir)app_offline.htm" />
   </Target>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>None</TypeScriptJSXEmit>
+    <TypeScriptModuleKind>ES6</TypeScriptModuleKind>
+    <TypeScriptCompileOnSaveEnabled>False</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>False</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
 </Project>
