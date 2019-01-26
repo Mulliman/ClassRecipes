@@ -93,3 +93,12 @@
 .no-side-borders {
   border-left: none;
   border-right: none; }
+
+.little-space {
+  margin: 10px; }
+
+.medium-space {
+  margin: 10px; }
+
+.big-space {
+  margin: 40px; }

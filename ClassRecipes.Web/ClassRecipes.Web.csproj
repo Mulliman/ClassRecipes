@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Areas\Common\ts\common.ts" />
+    <None Remove="Areas\Common\ts\common-init.ts" />
     <None Remove="Areas\Common\ts\smooth-scroll.ts" />
     <None Remove="Areas\Recipes\Themes\sam\theme-sam.ts" />
   </ItemGroup>
@@ -18,7 +18,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\Recipes\Data\" />
-    <Folder Include="wwwroot\img\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,7 +35,7 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="Areas\Common\ts\smooth-scroll.ts" />
-    <TypeScriptCompile Include="Areas\Common\ts\common.ts" />
+    <TypeScriptCompile Include="Areas\Common\ts\common-init.ts" />
     <TypeScriptCompile Include="Areas\Recipes\Themes\sam\ts\theme-sam.ts" />
   </ItemGroup>
 

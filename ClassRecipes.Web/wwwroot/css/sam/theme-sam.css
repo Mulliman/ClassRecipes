@@ -1,0 +1,104 @@
+.strong {
+  font-weight: bold; }
+
+.underlined {
+  text-decoration: underline; }
+
+.strikethrough {
+  text-decoration: line-through; }
+
+.border {
+  border: 1px solid red; }
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap; }
+
+.flex-row .col {
+  display: flex; }
+
+@media only screen and (max-width: 600px) {
+  .no-top-border-on-small {
+    border-top: none !important; }
+  .no-side-borders-on-small {
+    border-left: none !important;
+    border-right: none !important; }
+  .no-bottom-border-on-small {
+    border-bottom: none !important; } }
+
+.darken-image:after {
+  content: '\A';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.75);
+  opacity: 1;
+  transition: all 1s;
+  -webkit-transition: all 1s; }
+
+.card.card-border .card-content {
+  border-left: 1px solid red;
+  border-right: 1px solid red;
+  border-bottom: 1px solid red; }
+
+.card.card-border.with-action.no-image .card-content {
+  border-top: 1px solid red; }
+
+.card.card-border.with-action .card-action {
+  border-left: 1px solid red;
+  border-right: 1px solid red;
+  border-bottom: 1px solid red;
+  border-top: none; }
+
+.card-action.big-action {
+  display: block; }
+
+.card .card-action.big-action span:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+  margin-right: 24px;
+  -webkit-transition: color .3s ease;
+  transition: color .3s ease;
+  text-transform: uppercase; }
+
+.no-margin {
+  margin: 0 !important; }
+
+.no-margin-bottom {
+  margin-bottom: 0 !important; }
+
+.no-margin-top {
+  margin-top: 0 !important; }
+
+.no-margin-sides {
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
+
+.no-padding {
+  padding: 0 !important; }
+
+.no-padding-sides {
+  padding-left: 0 !important;
+  padding-right: 0 !important; }
+
+@media only screen and (max-width: 600px) {
+  .no-padding-sides-on-small {
+    padding-left: 0 !important;
+    padding-right: 0 !important; } }
+
+.no-spacing {
+  margin: 0 !important;
+  padding: 0 !important; }
+
+.no-side-borders {
+  border-left: none;
+  border-right: none; }
+
+.little-space {
+  margin: 10px; }
+
+.medium-space {
+  margin: 10px; }
+
+.big-space {
+  margin: 40px; }
