@@ -4,7 +4,7 @@
     Layout = "_Layout";
 }
 
-<partial name="_Hero.cshtml" />
+@await Html.PartialAsync("_Hero", Model)
 
 <div id="Start" class="article-start"></div>
 
@@ -96,7 +96,7 @@
 
         <div class="row flex-row">
 
-            @foreach(var related in Model.Recipe.RelatedFinishingRecipes)
+            @foreach (var related in Model.Recipe.RelatedFinishingRecipes)
             {
                 <div class="col s12 m6">
                     @await Html.PartialAsync("RecipeCard", related)
