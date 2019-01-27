@@ -25,21 +25,21 @@ html, body {
         cursor: pointer;
     }
 
-    .food-site .materialboxed:hover:not(.active) {
+    .materialboxed:hover:not(.active) {
         opacity: .95;
     }
 
-    .food-site .btn,
-    .food-site .btn-large,
-    .food-site .btn-small,
-    .food-site .btn-flat {
+    .btn,
+    .btn-large,
+    .btn-small,
+    .btn-flat {
         text-transform: none;
         font-family: $button-font;
         font-size: 20px;
         letter-spacing: $button-letter-spacing;
     }
 
-    .food-site .section-button-row {
+    .section-button-row {
         padding-top: 20px;
     }
 

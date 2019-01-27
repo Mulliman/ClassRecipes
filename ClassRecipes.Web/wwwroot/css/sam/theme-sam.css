@@ -293,19 +293,19 @@ html, body {
 .food-site a:hover {
   cursor: pointer; }
 
-.food-site .food-site .materialboxed:hover:not(.active) {
+.food-site .materialboxed:hover:not(.active) {
   opacity: .95; }
 
-.food-site .food-site .btn,
-.food-site .food-site .btn-large,
-.food-site .food-site .btn-small,
-.food-site .food-site .btn-flat {
+.food-site .btn,
+.food-site .btn-large,
+.food-site .btn-small,
+.food-site .btn-flat {
   text-transform: none;
   font-family: "EB Garamond", serif;
   font-size: 20px;
   letter-spacing: 2px; }
 
-.food-site .food-site .section-button-row {
+.food-site .section-button-row {
   padding-top: 20px; }
 
 @media only screen and (max-width: 600px) {
