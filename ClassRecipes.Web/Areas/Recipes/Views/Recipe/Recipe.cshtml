@@ -4,104 +4,109 @@
     Layout = "_Layout";
 }
 
-@await Html.PartialAsync("_Hero", Model)
+<div class="recipe-page">
 
-<div id="Start" class="article-start"></div>
+    @await Html.PartialAsync("_Hero", Model)
 
-<div class="prereqs recipe-section">
-    <div class="container">
-        <div class="row">
-            <div class="col s12 m12 l12">
-                <h2>Prerequisites</h2>
-            </div>
-        </div>
+    <div id="Start" class="article-start"></div>
 
-        <div class="row">
-            <div class="col s12 m12 l6">
-                @await Html.PartialAsync("~/Areas/Common/Views/Shared/_CollectionWithHeader.cshtml", Model.IngredientsCollection)
-            </div>
-
-            <div class="col s12 m12 l6">
-                @await Html.PartialAsync("~/Areas/Common/Views/Shared/_CollectionWithHeader.cshtml", Model.ToolsCollection)
-            </div>
-        </div>
-
-        <div class="row center section-button-row">
-            <a href="#Instructions" class="btn-large brand-green-border-button darken-2 z-depth-0">Begin Cooking</a>
-        </div>
-    </div>
-</div>
-
-<div class="container recipe-section" id="Instructions">
-    <div class="row">
-
-        <div class="col s12 m12 l12 no-bottom-border-on-small no-padding-sides-on-small">
-            <h2>Instructions</h2>
-        </div>
-
-    </div>
-
-    @{ var stepNumber = 1; }
-
-    @foreach (var step in Model.Recipe.Steps)
-    {
-        var isLastStep = Model.IsLastStep(stepNumber);
-
-        var stepModel = new ClassRecipes.Web.Areas.Recipes.Models.StepModel(step, stepNumber, isLastStep);
-
-        @await Html.PartialAsync("_Step", stepModel)
-
-        <div id="@("Step" + (stepNumber + 1))" class="divider big-space"></div>
-
-        @if (!isLastStep)
-        {
-            stepNumber++;
-        }
-    }
-
-    <div class="row center section-button-row">
-        <a href="#Finishing" class="btn-large brand-green-border-button darken-2 z-depth-0">Finishing off</a>
-    </div>
-</div>
-
-<div id="Finishing" class="grey lighten-3 recipe-section">
-    <div class="container">
-
-        <div class="row">
-
-            <div class="col s12 m12 l12 no-bottom-border-on-small no-padding-sides-on-small">
-                <h2>Finishing</h2>
-            </div>
-
-        </div>
-
-        @if (Model.Recipe.FinishingImageUrls?.Any() == true)
-        {
-            var firstImageOnlyForNow = Model.Recipe.FinishingImageUrls.First();
-
-            <div class="row">
-                <div class="col s12 ">
-                    <div class="finishing-image material-placeholder">
-                        @Html.RecipeImage(firstImageOnlyForNow, "Final Image", "materialboxed responsive-img")
+    <article class="main-article">
+        <div class="prereqs recipe-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <h2>Prerequisites</h2>
                     </div>
                 </div>
-            </div>
-        }
 
-        <div class="row">
-            <div class="col s12 m12 l12 no-bottom-border-on-small no-padding-sides-on-small">
-                <h4>Serve with...</h4>
-            </div>
-        </div>
+                <div class="row">
+                    <div class="col s12 m12 l6">
+                        @await Html.PartialAsync("~/Areas/Common/Views/Shared/_CollectionWithHeader.cshtml", Model.IngredientsCollection)
+                    </div>
 
-        <div class="row flex-row">
-
-            @foreach (var related in Model.Recipe.RelatedFinishingRecipes)
-            {
-                <div class="col s12 m6">
-                    @await Html.PartialAsync("RecipeCard", related)
+                    <div class="col s12 m12 l6">
+                        @await Html.PartialAsync("~/Areas/Common/Views/Shared/_CollectionWithHeader.cshtml", Model.ToolsCollection)
+                    </div>
                 </div>
-            }
+
+                <div class="row center section-button-row">
+                    <a href="#Instructions" class="btn-large brand-green-border-button darken-2 z-depth-0">Begin Cooking</a>
+                </div>
+            </div>
         </div>
-    </div>
+
+        <div class="container recipe-section" id="Instructions">
+            <div class="row">
+
+                <div class="col s12 m12 l12 no-bottom-border-on-small no-padding-sides-on-small">
+                    <h2>Instructions</h2>
+                </div>
+
+            </div>
+
+            @{ var stepNumber = 1; }
+
+            @foreach (var step in Model.Recipe.Steps)
+            {
+                var isLastStep = Model.IsLastStep(stepNumber);
+
+                var stepModel = new ClassRecipes.Web.Areas.Recipes.Models.StepModel(step, stepNumber, isLastStep);
+
+                @await Html.PartialAsync("_Step", stepModel)
+
+                <div id="@("Step" + (stepNumber + 1))" class="divider big-space"></div>
+
+                @if (!isLastStep)
+                {
+                    stepNumber++;
+                }
+            }
+
+            <div class="row center section-button-row">
+                <a href="#Finishing" class="btn-large brand-green-border-button darken-2 z-depth-0">Finishing off</a>
+            </div>
+        </div>
+
+        <div id="Finishing" class="grey lighten-3 recipe-section">
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col s12 m12 l12 no-bottom-border-on-small no-padding-sides-on-small">
+                        <h2>Finishing</h2>
+                    </div>
+
+                </div>
+
+                @if (Model.Recipe.FinishingImageUrls?.Any() == true)
+                {
+                    var firstImageOnlyForNow = Model.Recipe.FinishingImageUrls.First();
+
+                    <div class="row">
+                        <div class="col s12 ">
+                            <div class="finishing-image material-placeholder">
+                                @Html.RecipeImage(firstImageOnlyForNow, "Final Image", "materialboxed responsive-img")
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <div class="row">
+                    <div class="col s12 m12 l12 no-bottom-border-on-small no-padding-sides-on-small">
+                        <h4>Serve with...</h4>
+                    </div>
+                </div>
+
+                <div class="row flex-row">
+
+                    @foreach (var related in Model.Recipe.RelatedFinishingRecipes)
+                    {
+                        <div class="col s12 m6">
+                            @await Html.PartialAsync("RecipeCard", related)
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </article>
 </div>

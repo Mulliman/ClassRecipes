@@ -1,0 +1,114 @@
+﻿@import "theme-sam-variables";
+
+.recipe-page {
+    /*
+        ------------
+        Hero Section
+        ------------
+    */
+    .hero-section {
+        z-index: -1;
+        padding-top: 84px;
+        padding-bottom: 20px;
+
+        h1,
+        h5 {
+            color: #aed581;
+            text-shadow: 0 0 40px black;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 6rem;
+            transform: rotate(-5deg);
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 4rem;
+            }
+        }
+
+        h5 {
+            font-family: 'EB Garamond', serif;
+            letter-spacing: 2px;
+        }
+        /* Info */
+        .header-info-with-icons {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+
+            h5.header-info-with-icon {
+                display: inline-flex;
+                align-items: center;
+                margin: 0 2rem;
+                color: #cfe8b2;
+            }
+
+            @media (max-width: 750px) {
+                h5.header-info-with-icon {
+                    display: block;
+                    margin: 15px;
+                }
+
+                h5.header-info-with-icon > span,
+                h5.header-info-with-icon > i {
+                    vertical-align: middle;
+                }
+            }
+
+            .header-info-with-icon i {
+                cursor: help;
+            }
+
+            .header-info-with-icon span {
+                margin-left: 10px;
+            }
+        }
+    }
+    /*
+        ------------
+        Main Article
+        ------------
+        */
+    .main-article {
+
+        .recipe-section {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+        /*
+            ------------
+            Prereqs
+            ------------
+            */
+        .prereqs {
+            background: #e6f3d8;
+            background: linear-gradient(24deg, rgba(239,246,231,1) 0%, rgba(230,243,216,1) 100%);
+        }
+
+        .main-article h2,
+        .main-article h3,
+        .main-article h4,
+        .main-article h5,
+        .main-article h6 {
+            color: $section-heading-colour;
+        }
+    }
+    /*
+    ------------
+    Finishing
+    ------------
+    */
+    .finishing-image {
+        border: 2px solid #e0e0e0;
+        padding: 20px;
+        background: white;
+    }
+
+    .finishing-image img {
+        padding: 0;
+        margin: 0;
+    }
+}

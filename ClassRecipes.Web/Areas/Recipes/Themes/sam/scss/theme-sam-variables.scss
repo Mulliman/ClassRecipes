@@ -1,1 +1,34 @@
-﻿$border-color: red;
+﻿$border-color: #E0E0E0;
+
+$dancing: 'Dancing Script', cursive;
+$garamond: 'EB Garamond', serif;
+
+$title-font: $dancing;
+$heading-font: $garamond;
+$heading-letter-spacing: 2px;
+
+$button-font: $garamond;
+$button-letter-spacing: 2px;
+
+$brand-colour: hsl(88, 50%, 50%);
+
+$brand-colour-l1: hsl(88, 50%, 60%);
+$brand-colour-l2: hsl(88, 50%, 70%);
+$brand-colour-l3: hsl(88, 50%, 80%);
+$brand-colour-l4: hsl(88, 50%, 90%);
+$brand-colour-l5: hsl(88, 50%, 95%);
+
+$brand-colour-d1: hsl(88, 50%, 40%);
+$brand-colour-d2: hsl(88, 50%, 30%);
+$brand-colour-d3: hsl(88, 50%, 20%);
+$brand-colour-d4: hsl(88, 50%, 10%);
+$brand-colour-d5: hsl(88, 50%, 5%);
+
+$section-heading-colour: #426020;
+
+$info-colour: #699933;
+$tip-colour: #ef6c00;
+$warning-colour: #b71c1c;
+
+$footer-colour: #222;
+$footer-copyright-colour:#000;

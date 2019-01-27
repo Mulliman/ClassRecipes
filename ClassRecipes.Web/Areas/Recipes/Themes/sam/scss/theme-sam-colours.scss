@@ -1,0 +1,223 @@
+﻿@import "theme-sam-variables";
+
+/*
+    -----------------
+    Brand Colours
+    -----------------
+*/
+
+/* Background */
+
+.brand-green {
+    background: $brand-colour !important;
+}
+
+.brand-green.lighten-1 {
+    background: $brand-colour-l1 !important;
+}
+
+
+.brand-green.lighten-2 {
+    background: $brand-colour-l2 !important;
+}
+
+.brand-green.lighten-3 {
+    background: $brand-colour-l3 !important;
+}
+
+
+.brand-green.lighten-4 {
+    background: $brand-colour-l4 !important;
+}
+
+.brand-green.lighten-5 {
+    background: $brand-colour-l5 !important;
+}
+
+.brand-green.darken-1 {
+    background: $brand-colour-d1 !important;
+}
+
+.brand-green.darken-2 {
+    background: $brand-colour-d2 !important;
+}
+
+.brand-green.darken-3 {
+    background: $brand-colour-d3 !important;
+}
+
+.brand-green.darken-4 {
+    background: $brand-colour-d4 !important;
+}
+
+.brand-green.darken-5 {
+    background: $brand-colour-d5 !important;
+}
+
+/* Text */
+
+.brand-green-text {
+    color: $brand-colour !important;
+}
+
+.brand-green-text.lighten-1 {
+    color: $brand-colour-l1 !important;
+}
+
+
+.brand-green-text.lighten-2 {
+    color: $brand-colour-l2 !important;
+}
+
+.brand-green-text.lighten-3 {
+    color: $brand-colour-l3 !important;
+}
+
+
+.brand-green-text.lighten-4 {
+    color: $brand-colour-l4 !important;
+}
+
+.brand-green-text.lighten-5 {
+    color: $brand-colour-l5 !important;
+}
+
+.brand-green-text.darken-1 {
+    color: $brand-colour-d1 !important;
+}
+
+
+.brand-green-text.darken-2 {
+    color: $brand-colour-d2 !important;
+}
+
+.brand-green-text.darken-3 {
+    color: $brand-colour-d3 !important;
+}
+
+
+.brand-green-text.darken-4 {
+    color: $brand-colour-d4 !important;
+}
+
+/* Buttons */
+
+.brand-green-border-button {
+    color: $brand-colour !important;
+    background: none;
+    border: $brand-colour 1px solid;
+}
+
+.brand-green-border-button:hover {
+    color: $brand-colour-l2 !important;
+    background: none;
+    border: $brand-colour-l2 1px solid;
+}
+
+.brand-green-border-button.lighten-1 {
+    color: $brand-colour-l1 !important;
+    background: none;
+    border: $brand-colour-l1 1px solid;
+}
+
+.brand-green-border-button.lighten-1:hover {
+    color: $brand-colour-l3 !important;
+    background: none;
+    border: $brand-colour-l3 1px solid;
+}
+
+.brand-green-border-button.lighten-2 {
+    color: $brand-colour-l2 !important;
+    background: none;
+    border: $brand-colour-l2 1px solid;
+}
+
+.brand-green-border-button.lighten-2:hover {
+    color: $brand-colour !important;
+    background: none;
+    border: $brand-colour 1px solid;
+}
+
+.brand-green-border-button.lighten-3 {
+    color: $brand-colour-l3 !important;
+    background: none;
+    border: $brand-colour-l3 1px solid;
+}
+
+.brand-green-border-button.lighten-3:hover {
+    color: $brand-colour-l1 !important;
+    background: none;
+    border: $brand-colour-l1 1px solid;
+}
+
+.brand-green-border-button.lighten-4 {
+    color: $brand-colour-l4 !important;
+    background: none;
+    border: $brand-colour-l4 1px solid;
+}
+
+.brand-green-border-button.lighten-4:hover {
+    color: $brand-colour-l2 !important;
+    background: none;
+    border: $brand-colour-l2 1px solid;
+}
+
+.brand-green-border-button.lighten-5 {
+    color: $brand-colour-l5 !important;
+    background: none;
+    border: $brand-colour-l5 1px solid;
+}
+
+.brand-green-border-button.lighten-5:hover {
+    color: $brand-colour-l2 !important;
+    background: none;
+    border: $brand-colour-l2 1px solid;
+}
+
+.brand-green-border-button.darken-1 {
+    color: $brand-colour-d1 !important;
+    background: none;
+    border: $brand-colour-d1 1px solid;
+}
+
+.brand-green-border-button.darken-1:hover {
+    color: $brand-colour-d3 !important;
+    background: none;
+    border: $brand-colour-d3 1px solid;
+}
+
+.brand-green-border-button.darken-2 {
+    color: $brand-colour-d2 !important;
+    background: none;
+    border: $brand-colour-d2 1px solid;
+}
+
+.brand-green-border-button.darken-2:hover {
+    color: $brand-colour-d4 !important;
+    background: none;
+    border: $brand-colour-d4 1px solid;
+}
+
+.brand-green-border-button.darken-3 {
+    color: $brand-colour-d3 !important;
+    background: none;
+    border: $brand-colour-d3 1px solid;
+}
+
+.brand-green-border-button.darken-3:hover {
+    color: $brand-colour-d1 !important;
+    background: none;
+    border: $brand-colour-d1 1px solid;
+}
+
+.brand-green-border-button.darken-4 {
+    color: $brand-colour-d4 !important;
+    background: none;
+    border: $brand-colour-d4 1px solid;
+}
+
+.brand-green-border-button.darken-4:hover {
+    color: $brand-colour-d2 !important;
+    background: none;
+    border: $brand-colour-d2 1px solid;
+}

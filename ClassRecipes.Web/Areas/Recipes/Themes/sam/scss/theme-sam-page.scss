@@ -1,0 +1,55 @@
+﻿@import "theme-sam-variables";
+
+html, body {
+    position: relative;
+    min-width: 360px;
+    background: #fafafa;
+    z-index: -1;
+}
+
+.food-site {
+    .container {
+        max-width: 960px;
+    }
+
+    h1 {
+        font-family: $title-font;
+    }
+
+    h2, h3, h4, h5 {
+        font-family: $heading-font;
+        letter-spacing: $heading-letter-spacing;
+    }
+
+    a:hover {
+        cursor: pointer;
+    }
+
+    .food-site .materialboxed:hover:not(.active) {
+        opacity: .95;
+    }
+
+    .food-site .btn,
+    .food-site .btn-large,
+    .food-site .btn-small,
+    .food-site .btn-flat {
+        text-transform: none;
+        font-family: $button-font;
+        font-size: 20px;
+        letter-spacing: $button-letter-spacing;
+    }
+
+    .food-site .section-button-row {
+        padding-top: 20px;
+    }
+
+    @media only screen and (max-width : 600px) {
+        .collection-item {
+            padding: 5px 10px;
+        }
+
+        .main-article .collection.with-header .collection-item {
+            padding: 5px 20px;
+        }
+    }
+}

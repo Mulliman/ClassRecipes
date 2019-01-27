@@ -1,0 +1,44 @@
+﻿@import "theme-sam-variables";
+
+/* Nav */
+
+.food-site .navbar-material {
+
+    ul {
+
+        li {
+            transition: background-color .5s;
+
+            a {
+                color: $brand-colour-l5;
+            }
+        }
+
+        li:hover {
+            background: rgba(0,0,0,0.4);
+        }
+    }
+}
+
+.logo-container {
+    vertical-align: middle;
+}
+
+nav.navbar-material {
+    background: rgba(0,0,0,0.25);
+    border: none;
+    box-shadow: none;
+    margin-bottom: -64px;
+    z-index: 100;
+
+    .nav-wrapper .brand-logo img {
+        height: 44px;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar-material .nav-wrapper .brand-logo img {
+        height: 36px;
+    }
+}
