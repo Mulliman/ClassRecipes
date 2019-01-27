@@ -7,5 +7,8 @@
         public abstract string ShortIntro { get; }
 
         public abstract string ThinImage { get; }
+
+        // Tiny recipes never have their own page.
+        public string UrlName => null;
     }
 }

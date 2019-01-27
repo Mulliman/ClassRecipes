@@ -1,0 +1,10 @@
+﻿@model ClassRecipes.Core.IRelatedRecipe
+
+@if (!string.IsNullOrEmpty(Model.ThinImage))
+{
+    @await Html.PartialAsync("RecipeCardWithImage", Model)
+}
+else
+{
+    @await Html.PartialAsync("RecipeCardNoImage", Model)
+}

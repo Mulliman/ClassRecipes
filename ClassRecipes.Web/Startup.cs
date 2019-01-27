@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using ClassRecipes.Core;
 using ClassRecipes.Core.Repository;
+using ClassRecipes.Core.Providers;
+using ClassRecipes.Web.Areas.Recipes.Providers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -27,7 +29,19 @@ namespace ClassRecipes.Web
                 .Where(t => t.IsSubclassOf(typeof(Recipe)) && !t.IsAbstract)
                 .Select(t => (Recipe)Activator.CreateInstance(t));
 
+
+            // Register Dependencies
             services.AddSingleton<IRecipeRepository>(new RecipeRepository(recipes));
+
+            services.AddTransient<IRecipeUrlProvider, RecipeUrlProvider>();
+            services.AddTransient<IImageUrlProvider, DefaultImageUrlProvider>();
+
+            // Build the provider
+            var provider = services.BuildServiceProvider();
+            
+            // 'Inject' the static helper classes with the needed services.
+            RecipeHtmlHelpers.RecipeUrlProvider = provider.GetService<IRecipeUrlProvider>();
+            RecipeHtmlHelpers.ImageUrlProvider = provider.GetService<IImageUrlProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

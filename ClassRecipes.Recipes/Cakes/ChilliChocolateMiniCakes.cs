@@ -185,7 +185,7 @@ this cake has a slightly spicy, smoky after taste and a deep moist chocolatey fl
                 }
             };
 
-            FinishingImageUrls = new[] { "/img/chilli-cake.jpg" };
+            FinishingImageUrls = new[] { "chilli-cake.jpg" };
 
             RelatedFinishingRecipes = new IRelatedRecipe[] { new CayenneChocolateButtercreamTinyRecipe(), new ChilliSyrupTinyRecipe() };
         }
