@@ -6,34 +6,34 @@ namespace ClassRecipes.Core
 {
     public abstract class Recipe : IRelatedRecipe
     {
-        public string Title { get; set; }
+        public abstract string Title { get; }
 
-        public string UrlName { get; set; }
+        public abstract string UrlName { get; }
 
-        public string Intro { get; set; }
+        public abstract string Intro { get; }
 
-        public string ShortIntro { get; set; }
+        public abstract string ShortIntro { get; }
 
-        public string ThinImage { get; set; }
+        public virtual string ThinImage { get; }
 
-        public Difficulty Difficulty { get; set; }
+        public abstract Difficulty Difficulty { get; }
 
-        public TimeSpan CookTime { get; set; }
+        public abstract TimeSpan CookTime { get; }
 
-        public TimeSpan PrepTime { get; set; }
+        public abstract TimeSpan PrepTime { get; }
 
-        public TimeSpan TotalTime { get; set; }
+        public abstract TimeSpan TotalTime { get; }
 
-        public IEnumerable<IQuantity<Ingredient>> Ingredients { get; set; }
+        public abstract IEnumerable<IQuantity<Ingredient>> Ingredients { get; }
 
-        public IEnumerable<IQuantity<Tool>> Tools { get; set; }
+        public abstract IEnumerable<IQuantity<Tool>> Tools { get; }
 
-        public IList<Step> Steps { get; set; }
+        public abstract IList<Step> Steps { get; }
 
-        public IEnumerable<string> FinishingImagePath { get; set; }
+        public virtual IEnumerable<string> FinishingImagePaths { get; }
 
-        public IEnumerable<IRelatedRecipe> RelatedFinishingRecipes { get; set; }
+        public virtual IEnumerable<IRelatedRecipe> RelatedFinishingRecipes { get; }
 
-        public string BackgroundImagePath { get; set; }
+        public virtual string BackgroundImagePath { get; }
     }
 }

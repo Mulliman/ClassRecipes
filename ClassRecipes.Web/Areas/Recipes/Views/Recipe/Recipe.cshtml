@@ -78,9 +78,9 @@
 
                 </div>
 
-                @if (Model.Recipe.FinishingImagePath?.Any() == true)
+                @if (Model.Recipe.FinishingImagePaths?.Any() == true)
                 {
-                    var firstImageOnlyForNow = Model.Recipe.FinishingImagePath.First();
+                    var firstImageOnlyForNow = Model.Recipe.FinishingImagePaths.First();
 
                     <div class="row">
                         <div class="col s12 ">

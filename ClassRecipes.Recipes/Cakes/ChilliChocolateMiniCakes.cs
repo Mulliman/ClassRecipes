@@ -1,4 +1,6 @@
-﻿using ClassRecipes.Core;
+﻿using System;
+using System.Collections.Generic;
+using ClassRecipes.Core;
 using ClassRecipes.Core.Alerts;
 using ClassRecipes.Core.Quantities;
 using ClassRecipes.Ingredients;
@@ -9,43 +11,49 @@ namespace ClassRecipes.Recipes.Cakes
 {
     public class ChilliChocolateMiniCakes : Recipe
     {
+        private readonly Quantity<Ingredient> _choc = new Quantity<Ingredient>(Chocolates.DarkChocolate, 250, Units.Gram);
+        private readonly Quantity<Ingredient> _butter = new Quantity<Ingredient>(Dairy.UnsaltedButter, 250, Units.Gram);
+        private readonly Quantity<Ingredient> _coffee = new Quantity<Ingredient>(Coffees.InstantCoffee, 1, Units.Teaspoon);
+        private readonly Quantity<Ingredient> _water = new Quantity<Ingredient>(new Ingredient("Boiling Water"), 125, Units.Millilitre);
+        private readonly Quantity<Ingredient> _cocoa = new Quantity<Ingredient>(Chocolates.CocoaPowder, 50, Units.Gram);
+        private readonly Quantity<Ingredient> _flour = new Quantity<Ingredient>(Flours.PlainFlour, 200, Units.Gram);
+        private readonly Quantity<Ingredient> _bakingPowder = new Quantity<Ingredient>(Baking.BakingPowder, 1.5, Units.Teaspoon);
+        private readonly Quantity<Ingredient> _bakingSoda = new Quantity<Ingredient>(Baking.BakingSoda, 0.5, Units.Teaspoon);
+        private readonly Quantity<Ingredient> _sugar = new Quantity<Ingredient>(Sugars.CasterSugar, 250, Units.Gram);
+        private readonly Quantity<Ingredient> _brownSugar = new Quantity<Ingredient>(Sugars.LightBrownSugar, 250, Units.Gram);
+        private readonly Quantity<Ingredient> _eggs = new Quantity<Ingredient>(Eggs.LargeEggs, 4);
+        private readonly Quantity<Ingredient> _milk = new Quantity<Ingredient>(Dairy.FullFatMilk, 100, Units.Millilitre);
+        private readonly Quantity<Ingredient> _lemonJuice = new Quantity<Ingredient>(Juices.LemonJuice, 2, Units.Tablespoon);
+        private readonly RangeQuantity<Ingredient> _chilli = new RangeQuantity<Ingredient>(Peppers.SmallDriedChilliPepper, 1, 3);
+        private readonly Quantity<Ingredient> _clementine = new Quantity<Ingredient>(Fruits.Clementine, 1);
+
         public ChilliChocolateMiniCakes()
-        {
-            Title = "Chilli Chocolate Mini Cakes";
-            Intro = @"An adult chocolate cake for those that don't want to believe that 'adult' food must include alcohol,
+        {       
+        }
+
+        public override string Title => "Chilli Chocolate Mini Cakes";
+
+        public override string UrlName => "chilli-chocolate-mini-cakes";
+
+        public override string Intro => @"An adult chocolate cake for those that don't want to believe that 'adult' food must include alcohol,
 this cake has a slightly spicy, smoky after taste and a deep moist chocolatey flavour.";
-            ShortIntro = "An adult chocolate cake for those that don't want to believe that 'adult' food must include alcohol.";
 
-            UrlName = "chilli-chocolate-mini-cakes";
+        public override string ShortIntro => "An adult chocolate cake for those that don't want to believe that 'adult' food must include alcohol.";
 
-            PrepTime = new System.TimeSpan(0, 30, 0);
-            CookTime = new System.TimeSpan(0, 40, 0);
-            TotalTime = new System.TimeSpan(1, 20, 0);
-            
-            Difficulty = Difficulty.Medium;
-            
-            var choc = new Quantity<Ingredient>(Chocolates.DarkChocolate, 250, Units.Gram);
-            var butter = new Quantity<Ingredient>(Dairy.UnsaltedButter, 250, Units.Gram);
-            var coffee = new Quantity<Ingredient>(Coffees.InstantCoffee, 1, Units.Teaspoon);
-            var water = new Quantity<Ingredient>(new Ingredient("Boiling Water"), 125, Units.Millilitre);
-            var cocoa = new Quantity<Ingredient>(Chocolates.CocoaPowder, 50, Units.Gram);
-            var flour = new Quantity<Ingredient>(Flours.PlainFlour, 200, Units.Gram);
-            var bakingPowder = new Quantity<Ingredient>(Baking.BakingPowder, 1.5, Units.Teaspoon);
-            var bakingSoda = new Quantity<Ingredient>(Baking.BakingSoda, 0.5, Units.Teaspoon);
-            var sugar = new Quantity<Ingredient>(Sugars.CasterSugar, 250, Units.Gram);
-            var brownSugar = new Quantity<Ingredient>(Sugars.LightBrownSugar, 250, Units.Gram);
-            var eggs = new Quantity<Ingredient>(Eggs.LargeEggs, 4);
-            var milk = new Quantity<Ingredient>(Dairy.FullFatMilk, 100, Units.Millilitre);
-            var lemonJuice = new Quantity<Ingredient>(Juices.LemonJuice, 2, Units.Tablespoon);
-            var chilli = new RangeQuantity<Ingredient>(Peppers.SmallDriedChilliPepper, 1, 3);
-            var clementine = new Quantity<Ingredient>(Fruits.Clementine, 1);
+        public override Difficulty Difficulty => Difficulty.Medium;
 
-            Ingredients = new IQuantity<Ingredient>[]
+        public override TimeSpan CookTime => new System.TimeSpan(0, 40, 0);
+
+        public override TimeSpan PrepTime => new System.TimeSpan(0, 30, 0);
+
+        public override TimeSpan TotalTime => new System.TimeSpan(1, 20, 0);
+
+        public override IEnumerable<IQuantity<Ingredient>> Ingredients => new IQuantity<Ingredient>[]
             {
-                choc, butter, coffee, water, cocoa,flour, bakingPowder, bakingSoda, sugar, brownSugar, eggs, milk, lemonJuice, chilli, clementine
+                _choc, _butter, _coffee, _water, _cocoa, _flour, _bakingPowder, _bakingSoda, _sugar, _brownSugar, _eggs, _milk, _lemonJuice, _chilli, _clementine
             };
 
-            Tools = new IQuantity<Tool>[]
+        public override IEnumerable<IQuantity<Tool>> Tools => new IQuantity<Tool>[]
             {
                 new NoQuantity<Tool>(Appliances.Oven),
                 new NoQuantity<Tool>(Appliances.Hob),
@@ -58,17 +66,17 @@ this cake has a slightly spicy, smoky after taste and a deep moist chocolatey fl
                 new NoQuantity<Tool>(BakingTools.WireRack),
             };
 
-            Steps = new[]
+        public override IList<Step> Steps => new[]
             {
                 new Step
                 {
                     Title = "Make Fake Buttermilk",
-                    TextLines = new [] 
+                    TextLines = new []
                     {
                         "Mix the milk and lemon juice and stir well. This is an easy alternative to butter milk.",
                         "The liquid will likely curdle, but this isn't a problem."
                     },
-                    Ingredients = new [] { milk, lemonJuice },
+                    Ingredients = new [] { _milk, _lemonJuice },
                     Tools = new [] { new Quantity<Tool>(BowlsAndJugs.MixingBowl, 3) }
                 },
                 new Step
@@ -98,7 +106,7 @@ this cake has a slightly spicy, smoky after taste and a deep moist chocolatey fl
                         "Heat up the chocolate and butter until melted."
                     },
                     Tools = new IQuantity<Tool>[] { new Quantity<Tool>(BowlsAndJugs.MixingBowl, 1), new NoQuantity<Tool>(Pans.Saucepan),},
-                    Ingredients = new [] { choc, butter }
+                    Ingredients = new [] { _choc, _butter }
                 },
                 new Step
                 {
@@ -108,7 +116,7 @@ this cake has a slightly spicy, smoky after taste and a deep moist chocolatey fl
                         "Combine the coffee and boiling water, and then add to the butter and chocolate mix.",
                         "Stir until fully combined and then remove from the heat."
                     },
-                    Ingredients = new [] { coffee, water }
+                    Ingredients = new [] { _coffee, _water }
                 },
                 new Step
                 {
@@ -118,7 +126,7 @@ this cake has a slightly spicy, smoky after taste and a deep moist chocolatey fl
                         "Combine the dry ingredients listed in this step and mix well."
                     },
                     Tools = new IQuantity<Tool>[] { new Quantity<Tool>(BowlsAndJugs.MixingBowl, 1)},
-                    Ingredients = new [] { cocoa, flour, bakingPowder, bakingSoda, sugar, brownSugar }
+                    Ingredients = new [] { _cocoa, _flour, _bakingPowder, _bakingSoda, _sugar, _brownSugar }
                 },
                 new Step
                 {
@@ -127,7 +135,7 @@ this cake has a slightly spicy, smoky after taste and a deep moist chocolatey fl
                     {
                         "Add the eggs to the milky mixture from step 0. Mix until combined."
                     },
-                    Ingredients = new [] { eggs }
+                    Ingredients = new [] { _eggs }
                 },
                 new Step
                 {
@@ -137,7 +145,7 @@ this cake has a slightly spicy, smoky after taste and a deep moist chocolatey fl
                         "Add both the wet mix and the chocolate mix to the dry ingredients.",
                         "Combine well, but don't overmix or overwhisk. We are not trying to whisk air into this mixture."
                     },
-                    Ingredients = new [] 
+                    Ingredients = new []
                     {
                         new NoQuantity<Ingredient>(new Ingredient("Wet Ingredients Mix")),
                         new NoQuantity<Ingredient>(new Ingredient("Dry Ingredients Mix")),
@@ -154,7 +162,7 @@ this cake has a slightly spicy, smoky after taste and a deep moist chocolatey fl
                         "Use the pestle to grind the chillies to a fine powder.",
                         "Add the powder to the cake mix and stir until well combined."
                     },
-                    Ingredients = new [] { chilli },
+                    Ingredients = new [] { _chilli },
                     Tools = new [] { new NoQuantity<Tool>(Misc.MortarAndPestle) },
                     Alerts = new []
                     {
@@ -169,7 +177,7 @@ this cake has a slightly spicy, smoky after taste and a deep moist chocolatey fl
                         "Grate the zest of the clementine into the cake mix and then cut the clementine in half and sqeeze the juice in there too.",
                         "Give the mix one final stir."
                     },
-                    Ingredients = new [] { clementine },
+                    Ingredients = new [] { _clementine },
                     Tools = new [] { new NoQuantity<Tool>(Misc.Grater) }
                 },
                 new Step
@@ -180,16 +188,15 @@ this cake has a slightly spicy, smoky after taste and a deep moist chocolatey fl
                         "Equally divide the mixture into the two baking pans and put in the middle of the preheated oven.",
                         "Cook for 45 minutes and then check if a toothpick comes out clean when poked into the middle of the cake.If the toothpick isn't clean keep testing at 5 minute intervals."
                     },
-                    Ingredients = new [] { clementine },
+                    Ingredients = new [] { _clementine },
                     Tools = new IQuantity<Tool>[] { new NoQuantity<Tool>(Appliances.Oven), new Quantity<Tool>(BakingTools.BakingPan8Inch, 2) }
                 }
             };
 
-            FinishingImagePath = new[] { "chilli-cake.jpg" };
+        public override IEnumerable<string> FinishingImagePaths => new[] { "chilli-cake.jpg" };
 
-            BackgroundImagePath = "chilli-cake-2.jpg";
+        public override string BackgroundImagePath => "chilli-cake-2.jpg";
 
-            RelatedFinishingRecipes = new IRelatedRecipe[] { new CayenneChocolateButtercreamTinyRecipe(), new ChilliSyrupTinyRecipe() };
-        }
+        public override IEnumerable<IRelatedRecipe> RelatedFinishingRecipes => new IRelatedRecipe[] { new CayenneChocolateButtercreamTinyRecipe(), new ChilliSyrupTinyRecipe() };
     }
 }
