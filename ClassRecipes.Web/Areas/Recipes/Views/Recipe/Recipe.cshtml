@@ -91,21 +91,24 @@
                     </div>
                 }
 
-                <div class="row">
-                    <div class="col s12 m12 l12 no-bottom-border-on-small no-padding-sides-on-small">
-                        <h4>Serve with...</h4>
-                    </div>
-                </div>
-
-                <div class="row flex-row">
-
-                    @foreach (var related in Model.Recipe.RelatedFinishingRecipes)
-                    {
-                        <div class="col s12 m6">
-                            @await Html.PartialAsync("RecipeCard", related)
+                @if (Model.Recipe.RelatedFinishingRecipes?.Any() == true)
+                {
+                    <div class="row">
+                        <div class="col s12 m12 l12 no-bottom-border-on-small no-padding-sides-on-small">
+                            <h4>Serve with...</h4>
                         </div>
-                    }
-                </div>
+                    </div>
+
+                    <div class="row flex-row">
+
+                        @foreach (var related in Model.Recipe.RelatedFinishingRecipes)
+                        {
+                            <div class="col s12 m6">
+                                @await Html.PartialAsync("RecipeCard", related)
+                            </div>
+                        }
+                    </div>
+                }
             </div>
         </div>
     </article>

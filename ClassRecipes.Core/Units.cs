@@ -12,5 +12,7 @@
 
         public static Unit Millilitre = new Unit("Millilitre", "ml");
         public static Unit Litre = new Unit("Litre", "l");
+
+        public static Unit Cloves = new Unit("Cloves", "Cloves");
     }
 }

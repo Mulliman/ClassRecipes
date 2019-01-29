@@ -35,5 +35,7 @@ namespace ClassRecipes.Core
         public virtual IEnumerable<IRelatedRecipe> RelatedFinishingRecipes { get; }
 
         public virtual string BackgroundImagePath { get; }
+
+        public virtual IEnumerable<string> StorageInstructions { get; }
     }
 }

@@ -9,5 +9,6 @@ namespace ClassRecipes.Ingredients
         public static Ingredient SemiSkimmedMilk = new Ingredient("Semi Skimmed Milk");
         public static Ingredient UnsaltedButter = new Ingredient("Unsalted Butter");
         public static Ingredient SaltedButter = new Ingredient("Salted Butter");
+        public static Ingredient GreekYoghurt = new Ingredient("Greek Yoghurt");
     }
 }
