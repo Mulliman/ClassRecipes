@@ -30,8 +30,10 @@ namespace ClassRecipes.Core
 
         public IList<Step> Steps { get; set; }
 
-        public IEnumerable<string> FinishingImageUrls { get; set; }
+        public IEnumerable<string> FinishingImagePath { get; set; }
 
         public IEnumerable<IRelatedRecipe> RelatedFinishingRecipes { get; set; }
+
+        public string BackgroundImagePath { get; set; }
     }
 }

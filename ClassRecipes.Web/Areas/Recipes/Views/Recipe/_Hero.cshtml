@@ -1,7 +1,10 @@
 ﻿@model ClassRecipes.Web.Areas.Recipes.Models.RecipePageModel
 
-<div class="hero-section" style="background-image: linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.70)), url('/img/chilli-cake-blur.jpg');">
-    <div class="section">
+<div class="hero-section">
+
+    @Html.RecipeImage(Model.Recipe.BackgroundImagePath, "Blurred image of final dish", "hero-background-image blurred")
+
+    <div class="section hero-content">
         <div class="container">
             <div class="row">
                 <h1 class="header center col m10 push-m1 l8 push-l2">@Model.Recipe.Title</h1>
@@ -12,16 +15,14 @@
             </div>
 
             <div class="row">
-
                 <div class="col s12 header-info-with-icons">
                     <h5 class="header-info-with-icon"><i class="small material-icons" title="Difficulty">sentiment_satisfied</i><span>@Model.Recipe.Difficulty</span></h5>
                     <h5 class="header-info-with-icon"><i class="small material-icons" title="Cook Time">hourglass_empty</i><span>@Model.Recipe.CookTime.ToReadableTimeSpan()</span></h5>
                     <h5 class="header-info-with-icon"><i class="small material-icons" title="Total Time">access_time</i><span>@Model.Recipe.TotalTime.ToReadableTimeSpan()</span></h5>
                 </div>
-
             </div>
 
-            <div class="row center section-button-row">
+            <div class="row center section-button-row no-padding">
                 <a href="#Start" class="btn-large brand-green-border-button lighten-3 z-depth-0">Get Started</a>
             </div>
         </div>
