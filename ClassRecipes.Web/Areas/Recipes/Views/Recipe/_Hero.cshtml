@@ -1,6 +1,11 @@
 ﻿@model ClassRecipes.Web.Areas.Recipes.Models.RecipePageModel
 
-<div class="hero-section">
+@{ 
+    var hasNoImage = string.IsNullOrWhiteSpace(Model.Recipe.BackgroundImagePath);
+    var noImageClass = hasNoImage ? "no-hero-image" : null;
+}
+
+<div class="hero-section @noImageClass">
 
     @Html.RecipeImage(Model.Recipe.BackgroundImagePath, "Blurred image of final dish", "hero-background-image blurred")
 

@@ -109,6 +109,26 @@
                         }
                     </div>
                 }
+
+                @if (Model.Recipe.StorageInstructions != null)
+                {
+                    <div class="row">
+                        <div class="col s12 m6">
+                            <div class="card brand-green darken-3">
+                                <div class="card-content white-text">
+                                    <span class="card-title">Storage Instructions</span>
+
+                                    @foreach(var line in Model.Recipe.StorageInstructions)
+                                    {
+                                        <p>
+                                            @line
+                                        </p>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
             </div>
         </div>
     </article>

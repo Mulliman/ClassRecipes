@@ -365,6 +365,8 @@ nav.navbar-material {
   .recipe-page .hero-section {
     z-index: -1;
     /* Info */ }
+    .recipe-page .hero-section.no-hero-image {
+      background-color: #4f7326; }
     .recipe-page .hero-section .hero-background-image {
       position: absolute;
       top: 0;
@@ -381,7 +383,7 @@ nav.navbar-material {
     .recipe-page .hero-section .hero-content {
       padding-top: 84px;
       padding-bottom: 20px;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.33), rgba(0, 0, 0, 0.9)); }
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), #050803); }
     .recipe-page .hero-section h1, .recipe-page .hero-section h5 {
       color: #aed581;
       text-shadow: 0 0 40px black; }
@@ -500,6 +502,10 @@ nav.navbar-material {
 .card .card-image.thin-image img {
   object-fit: cover;
   min-height: 100%; }
+
+.card .card-title {
+  font-family: "EB Garamond", serif;
+  letter-spacing: 2px; }
 
 .food-site .page-footer {
   background: #222; }

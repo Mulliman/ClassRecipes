@@ -135,7 +135,7 @@ namespace ClassRecipes.Recipes.Lasagne
 
         public override IEnumerable<string> StorageInstructions => new[]
         {
-            "Refrigerate any leftovers in a sealed container and eat withing 3 days. Reheat at full power in the microwave for 2 minutes. Make sure that the leftovers are hot all the way through."
+            "Refrigerate any leftovers in a sealed container and eat within 3 days. Reheat at full power (900w) in the microwave for 2-3 minutes. Make sure that the leftovers are hot all the way through."
         };
     }
 }
