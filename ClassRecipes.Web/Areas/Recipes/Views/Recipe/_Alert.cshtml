@@ -1,0 +1,16 @@
+﻿@using ClassRecipes.Core.Alerts
+
+@model ClassRecipes.Core.Alerts.Alert
+
+@if (Model.TypeName == InfoAlert.Identifier)
+{
+    <p class="cooking-info"><i class="material-icons">info</i><span>@Model.Text</span></p>
+}
+else if (Model.TypeName == TipAlert.Identifier)
+{
+    <p class="cooking-tip"><i class="material-icons">warning</i><span>@Model.Text</span></p>
+}
+else if (Model.TypeName == WarningAlert.Identifier)
+{
+    <p class="cooking-warning"><i class="material-icons">error</i><span>@Model.Text</span></p>
+}

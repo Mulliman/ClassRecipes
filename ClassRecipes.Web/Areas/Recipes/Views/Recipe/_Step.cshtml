@@ -29,7 +29,7 @@
                         {
                             @foreach (var alert in Model?.Step?.Alerts)
                             {
-                                <p>@alert.Text</p>
+                                @await Html.PartialAsync("_Alert", alert)
                             }
                         }
                     </div>
@@ -74,7 +74,7 @@
                         {
                             @foreach (var alert in Model?.Step?.Alerts)
                             {
-                                <p>@alert.Text</p>
+                                @await Html.PartialAsync("_Alert", alert)
                             }
                         }
                     </div>

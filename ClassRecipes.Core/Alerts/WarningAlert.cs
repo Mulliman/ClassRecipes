@@ -2,7 +2,9 @@
 {
     public class WarningAlert : Alert
     {
-        public WarningAlert(string text) : base(text, "warning")
+        public const string Identifier = "warning";
+
+        public WarningAlert(string text) : base(text, Identifier)
         {
         }
     }

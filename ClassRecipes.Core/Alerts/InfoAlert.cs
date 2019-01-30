@@ -2,7 +2,9 @@
 {
     public class InfoAlert : Alert
     {
-        public InfoAlert(string text) : base(text, "info")
+        public const string Identifier = "info";
+
+        public InfoAlert(string text) : base(text, Identifier)
         {
         }
     }

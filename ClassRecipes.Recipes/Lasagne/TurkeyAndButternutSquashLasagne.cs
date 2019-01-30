@@ -126,7 +126,10 @@ namespace ClassRecipes.Recipes.Lasagne
                 {
                     "Put in the oven and cook for 30 minutes.",
                 },
-                Alerts = new [] { new InfoAlert("For even better results, grill the 'lasagne' for 2-5 minutes at the end of the cooking") }
+                Alerts = new Alert[] 
+                {
+                    new InfoAlert("For even better results, grill the 'lasagne' for 2-5 minutes at the end of the cooking")
+                }
             }
         };
 

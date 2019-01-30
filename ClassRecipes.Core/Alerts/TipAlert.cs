@@ -2,7 +2,9 @@
 {
     public class TipAlert : Alert
     {
-        public TipAlert(string text) : base(text, "tip")
+        public const string Identifier = "tip";
+
+        public TipAlert(string text) : base(text, Identifier)
         {
         }
     }
