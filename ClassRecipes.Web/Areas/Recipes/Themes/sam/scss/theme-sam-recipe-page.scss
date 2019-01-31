@@ -9,10 +9,10 @@
     .hero-section {
         z-index: -1;
 
-        &.no-hero-image{
+        &.no-hero-image {
             background-color: $brand-colour-d2;
         }
-        
+
         .hero-background-image {
             position: absolute;
             top: 0;
@@ -97,6 +97,34 @@
         */
     .main-article {
 
+
+        .tags-section {
+            margin: 0;
+            border-bottom: 1px solid $brand-colour-d2;
+            border-top: 1px solid $brand-colour-d2;
+
+            .tags-row {
+                font-size: 1.2em;
+                padding: 20px 0;
+                margin: 0;
+
+                .tag-label {
+                    color: $brand-colour-d2;
+                    font-weight: bold;
+                }
+
+                .tag {
+                    padding: 10px;
+                    color: $brand-colour-d2;
+                    white-space: nowrap;
+                }
+
+                .tag:hover {
+                    color: $brand-colour-d4;
+                }
+            }
+        }
+
         .recipe-section {
             padding-top: 2rem;
             padding-bottom: 2rem;
@@ -109,6 +137,7 @@
         .prereqs {
             background: #e6f3d8;
             background: linear-gradient(24deg, rgba(239,246,231,1) 0%, rgba(230,243,216,1) 100%);
+            padding-bottom: 2rem;
         }
 
         .main-article h2,

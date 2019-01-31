@@ -3,6 +3,7 @@ using ClassRecipes.Core.Alerts;
 using ClassRecipes.Core.Quantities;
 using ClassRecipes.Ingredients;
 using ClassRecipes.Ingredients.Meats;
+using ClassRecipes.Tags;
 using ClassRecipes.Tools;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,8 @@ namespace ClassRecipes.Recipes.Lasagne
         public override string Intro => "While not authenic in any way, this one pan vegetable lasagne is an easy way to sneak two of your five a day in.";
 
         public override string ShortIntro => "While not authenic in any way, this one pan vegetable lasagne is an easy way to sneak two of your five a day in.";
+
+        public override IEnumerable<Tag> Tags => new[] { ReusableTags.PhonyItalian, ReusableTags.OnePot, ReusableTags.GlutenFree };
 
         public override Difficulty Difficulty => Difficulty.Medium;
 

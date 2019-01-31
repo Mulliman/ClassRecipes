@@ -5,6 +5,7 @@ using ClassRecipes.Core.Alerts;
 using ClassRecipes.Core.Quantities;
 using ClassRecipes.Ingredients;
 using ClassRecipes.Recipes.TinyRecipes.Chilli;
+using ClassRecipes.Tags;
 using ClassRecipes.Tools;
 
 namespace ClassRecipes.Recipes.Cakes
@@ -39,6 +40,8 @@ namespace ClassRecipes.Recipes.Cakes
 this cake has a slightly spicy, smoky after taste and a deep moist chocolatey flavour.";
 
         public override string ShortIntro => "An adult chocolate cake for those that don't want to believe that 'adult' food must include alcohol.";
+
+        public override IEnumerable<Tag> Tags => new[] { ReusableTags.Baking, ReusableTags.Cake, ReusableTags.Chocolate, ReusableTags.Chilli, ReusableTags.Spicy };
 
         public override Difficulty Difficulty => Difficulty.Medium;
 

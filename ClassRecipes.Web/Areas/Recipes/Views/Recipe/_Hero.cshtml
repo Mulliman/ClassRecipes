@@ -1,6 +1,6 @@
 ﻿@model ClassRecipes.Web.Areas.Recipes.Models.RecipePageModel
 
-@{ 
+@{
     var hasNoImage = string.IsNullOrWhiteSpace(Model.Recipe.BackgroundImagePath);
     var noImageClass = hasNoImage ? "no-hero-image" : null;
 }
@@ -33,3 +33,19 @@
         </div>
     </div>
 </div>
+
+@*@if (Model.Recipe.Tags?.Any() == true)
+{
+    <div class="tags-section">
+        <div class="container">
+            <div class="row center section-button-row tags-row">
+                <span class="tag-label">Tags: </span>
+
+                @foreach (var tag in Model.Recipe.Tags)
+                {
+                    @await Html.PartialAsync("_Tag", tag)
+                }
+            </div>
+        </div>
+    </div>
+}*@

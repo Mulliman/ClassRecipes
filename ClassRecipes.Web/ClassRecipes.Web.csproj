@@ -31,6 +31,7 @@
     <ProjectReference Include="..\ClassRecipes.Core\ClassRecipes.Core.csproj" />
     <ProjectReference Include="..\ClassRecipes.Ingredients\ClassRecipes.Ingredients.csproj" />
     <ProjectReference Include="..\ClassRecipes.Recipes\ClassRecipes.Recipes.csproj" />
+    <ProjectReference Include="..\ClassRecipes.Tags\ClassRecipes.Tags.csproj" />
     <ProjectReference Include="..\ClassRecipes.Tools\ClassRecipes.Tools.csproj" />
   </ItemGroup>
 
@@ -57,6 +58,10 @@
     <Content Update="Areas\Recipes\Views\Recipe\RecipeCardNoImage.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Areas\Recipes\Views\Recipe\_Tag.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
     <Content Update="Areas\Recipes\Views\Recipe\_Alert.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>

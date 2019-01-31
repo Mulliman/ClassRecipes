@@ -8,10 +8,26 @@
 
     @await Html.PartialAsync("_Hero", Model)
 
-    <div id="Start" class="article-start"></div>
-
     <article class="main-article">
-        <div class="prereqs recipe-section">
+        <div class="prereqs">
+            @if (Model.Recipe.Tags?.Any() == true)
+            {
+                <div class="tags-section">
+                    <div class="container">
+                        <div class="row center tags-row">
+                            <span class="tag-label">Tags: </span>
+
+                            @foreach (var tag in Model.Recipe.Tags)
+                            {
+                                @await Html.PartialAsync("_Tag", tag)
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+
+            <div id="Start" class="article-start"></div>
+
             <div class="container">
                 <div class="row">
                     <div class="col s12 m12 l12">
@@ -67,7 +83,7 @@
             </div>
         </div>
 
-        <div id="Finishing" class="grey lighten-3 recipe-section">
+        <div id="Finishing" class="grey lighten-3 recipe-section no-padding-bottom">
             <div class="container">
 
                 <div class="row">
@@ -130,6 +146,22 @@
                     </div>
                 }
             </div>
+
+            @if (Model.Recipe.Tags?.Any() == true)
+            {
+                <div class="tags-section">
+                    <div class="container">
+                        <div class="row center tags-row">
+                            <span class="tag-label">Tags: </span>
+
+                            @foreach (var tag in Model.Recipe.Tags)
+                            {
+                                @await Html.PartialAsync("_Tag", tag)
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
         </div>
     </article>
 </div>

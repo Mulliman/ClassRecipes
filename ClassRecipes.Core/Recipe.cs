@@ -14,6 +14,8 @@ namespace ClassRecipes.Core
 
         public abstract string ShortIntro { get; }
 
+        public abstract IEnumerable<Tag> Tags { get; }
+
         public virtual string ThinImage { get; }
 
         public abstract Difficulty Difficulty { get; }

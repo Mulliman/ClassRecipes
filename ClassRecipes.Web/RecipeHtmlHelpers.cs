@@ -10,7 +10,7 @@ namespace ClassRecipes.Web
         public static IRecipeUrlProvider RecipeUrlProvider { get; set; }
         public static IImageUrlProvider ImageUrlProvider { get; set; }
 
-        public static HtmlString RecipeImage(this IHtmlHelper helper, string imagePath, string alt, string css)
+        public static HtmlString RecipeImage(this IHtmlHelper helper, string imagePath, string alt, string css = null)
         {
             var imageUrl = ImageUrlProvider.GetImageUrl(imagePath);
 

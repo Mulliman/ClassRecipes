@@ -1,0 +1,12 @@
+﻿@model ClassRecipes.Core.Tag
+
+@if(Model == null)
+{
+    return;
+}
+
+@{ 
+    var url = $"/tag/{Model.Id}";
+}
+
+<a class="tag" href="@url"><i class="tiny material-icons">loyalty</i> @Model.Title</a>

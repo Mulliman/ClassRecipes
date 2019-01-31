@@ -423,12 +423,30 @@ nav.navbar-material {
             Prereqs
             ------------
             */ }
+    .recipe-page .main-article .tags-section {
+      margin: 0;
+      border-bottom: 1px solid #4f7326;
+      border-top: 1px solid #4f7326; }
+      .recipe-page .main-article .tags-section .tags-row {
+        font-size: 1.2em;
+        padding: 20px 0;
+        margin: 0; }
+        .recipe-page .main-article .tags-section .tags-row .tag-label {
+          color: #4f7326;
+          font-weight: bold; }
+        .recipe-page .main-article .tags-section .tags-row .tag {
+          padding: 10px;
+          color: #4f7326;
+          white-space: nowrap; }
+        .recipe-page .main-article .tags-section .tags-row .tag:hover {
+          color: #1a260d; }
     .recipe-page .main-article .recipe-section {
       padding-top: 2rem;
       padding-bottom: 2rem; }
     .recipe-page .main-article .prereqs {
       background: #e6f3d8;
-      background: linear-gradient(24deg, #eff6e7 0%, #e6f3d8 100%); }
+      background: linear-gradient(24deg, #eff6e7 0%, #e6f3d8 100%);
+      padding-bottom: 2rem; }
     .recipe-page .main-article .main-article h2,
     .recipe-page .main-article .main-article h3,
     .recipe-page .main-article .main-article h4,
