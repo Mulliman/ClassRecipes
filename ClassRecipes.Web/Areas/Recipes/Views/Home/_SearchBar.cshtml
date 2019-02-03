@@ -1,0 +1,27 @@
+﻿<div class="search-bar brand-green lighten-4">
+    <div class="container">
+
+        <div class="row no-padding-bottom">
+            <div class="col s12 l10 push-l1 ">
+                <div class="search-area center">
+                    <label class="search-label" for="HeroSearch">Search for</label>
+                    <input id="HeroSearch" name="HeroSearch" class="search-input" placeholder="something tasty" type="text" />
+                    <i class="small material-icons">search</i>
+                </div>
+            </div>
+        </div>
+
+        <div class="tags-section no-border no-icons">
+            <div class="container">
+                <div class="row center tags-row">
+                    <span class="tag-label">Popular searches: </span>
+
+                    @foreach (var tag in (new ClassRecipes.Recipes.Cakes.ChilliChocolateMiniCakes().Tags))
+                    {
+                        @await Html.PartialAsync("~/Areas/Recipes/Views/Recipe/_Tag.cshtml", tag)
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

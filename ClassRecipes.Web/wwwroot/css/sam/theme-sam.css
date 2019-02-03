@@ -346,100 +346,84 @@ nav.navbar-material {
   .navbar-material .nav-wrapper .brand-logo img {
     height: 36px; } }
 
-.recipe-page {
-  /*
+/*
         ------------
         Hero Section
         ------------
     */
+.hero-section {
+  z-index: -1;
+  /* Info */ }
+  .hero-section.no-hero-image {
+    background-color: #4f7326; }
+  .hero-section .hero-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 1600px;
+    object-fit: cover;
+    z-index: -2; }
+    .hero-section .hero-background-image.blurred {
+      -webkit-filter: blur(10px);
+      /* Safari 6.0 - 9.0 */
+      filter: blur(10px);
+      transform: scale(1.1); }
+  .hero-section .hero-content {
+    padding-top: 84px;
+    padding-bottom: 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), #050803); }
+  .hero-section h1, .hero-section h5 {
+    color: #aed581;
+    text-shadow: 0 0 40px black; }
+  .hero-section h1 {
+    font-family: "Dancing Script", cursive;
+    font-size: 6rem;
+    transform: rotate(-5deg); }
+  @media (max-width: 600px) {
+    .hero-section h1 {
+      font-size: 4rem; } }
+  .hero-section h5 {
+    font-family: "EB Garamond", serif;
+    letter-spacing: 2px; }
+  .hero-section .header-info-with-icons {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center; }
+    .hero-section .header-info-with-icons h5.header-info-with-icon {
+      display: inline-flex;
+      align-items: center;
+      margin: 0 2rem;
+      color: #cfe8b2; }
+    @media (max-width: 750px) {
+      .hero-section .header-info-with-icons h5.header-info-with-icon {
+        display: block;
+        margin: 15px; }
+      .hero-section .header-info-with-icons h5.header-info-with-icon > span,
+      .hero-section .header-info-with-icons h5.header-info-with-icon > i {
+        vertical-align: middle; } }
+    .hero-section .header-info-with-icons .header-info-with-icon i {
+      cursor: help; }
+    .hero-section .header-info-with-icons .header-info-with-icon span {
+      margin-left: 10px; }
+
+.recipe-page {
   /*
-        ------------
-        Main Article
-        ------------
-        */
+    ------------
+    Main Article
+    ------------
+    */
   /*
     ------------
     Finishing
     ------------
     */ }
-  .recipe-page .hero-section {
-    z-index: -1;
-    /* Info */ }
-    .recipe-page .hero-section.no-hero-image {
-      background-color: #4f7326; }
-    .recipe-page .hero-section .hero-background-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      min-width: 1600px;
-      object-fit: cover;
-      z-index: -2; }
-      .recipe-page .hero-section .hero-background-image.blurred {
-        -webkit-filter: blur(10px);
-        /* Safari 6.0 - 9.0 */
-        filter: blur(10px);
-        transform: scale(1.1); }
-    .recipe-page .hero-section .hero-content {
-      padding-top: 84px;
-      padding-bottom: 20px;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5), #050803); }
-    .recipe-page .hero-section h1, .recipe-page .hero-section h5 {
-      color: #aed581;
-      text-shadow: 0 0 40px black; }
-    .recipe-page .hero-section h1 {
-      font-family: 'Dancing Script', cursive;
-      font-size: 6rem;
-      transform: rotate(-5deg); }
-    @media (max-width: 600px) {
-      .recipe-page .hero-section h1 {
-        font-size: 4rem; } }
-    .recipe-page .hero-section h5 {
-      font-family: 'EB Garamond', serif;
-      letter-spacing: 2px; }
-    .recipe-page .hero-section .header-info-with-icons {
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-      text-align: center; }
-      .recipe-page .hero-section .header-info-with-icons h5.header-info-with-icon {
-        display: inline-flex;
-        align-items: center;
-        margin: 0 2rem;
-        color: #cfe8b2; }
-      @media (max-width: 750px) {
-        .recipe-page .hero-section .header-info-with-icons h5.header-info-with-icon {
-          display: block;
-          margin: 15px; }
-        .recipe-page .hero-section .header-info-with-icons h5.header-info-with-icon > span,
-        .recipe-page .hero-section .header-info-with-icons h5.header-info-with-icon > i {
-          vertical-align: middle; } }
-      .recipe-page .hero-section .header-info-with-icons .header-info-with-icon i {
-        cursor: help; }
-      .recipe-page .hero-section .header-info-with-icons .header-info-with-icon span {
-        margin-left: 10px; }
   .recipe-page .main-article {
     /*
             ------------
             Prereqs
             ------------
             */ }
-    .recipe-page .main-article .tags-section {
-      margin: 0;
-      border-bottom: 1px solid #4f7326;
-      border-top: 1px solid #4f7326; }
-      .recipe-page .main-article .tags-section .tags-row {
-        font-size: 1.2em;
-        padding: 20px 0;
-        margin: 0; }
-        .recipe-page .main-article .tags-section .tags-row .tag-label {
-          color: #4f7326;
-          font-weight: bold; }
-        .recipe-page .main-article .tags-section .tags-row .tag {
-          padding: 10px;
-          color: #4f7326;
-          white-space: nowrap; }
-        .recipe-page .main-article .tags-section .tags-row .tag:hover {
-          color: #1a260d; }
     .recipe-page .main-article .recipe-section {
       padding-top: 2rem;
       padding-bottom: 2rem; }
@@ -529,3 +513,101 @@ nav.navbar-material {
   background: #222; }
   .food-site .page-footer .footer-copyright {
     background: #000; }
+
+.home-page .search-bar {
+  padding: 20px; }
+  .home-page .search-bar .search-area {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center; }
+  @media (max-width: 600px) {
+    .home-page .search-bar .search-area {
+      display: block;
+      margin-bottom: 20px; } }
+  .home-page .search-bar .row {
+    padding: 20px 0;
+    margin: 0; }
+  .home-page .search-bar .search-label {
+    display: inline;
+    font-size: 2rem;
+    color: #4f7326;
+    font-family: "EB Garamond", serif;
+    letter-spacing: 2px;
+    margin-right: 10px; }
+  @media (max-width: 600px) {
+    .home-page .search-bar .search-label {
+      display: block;
+      margin-right: 0; } }
+  .home-page .search-bar i {
+    color: #4f7326; }
+  @media (max-width: 600px) {
+    .home-page .search-bar i {
+      display: none; } }
+  .home-page .search-bar input[type=text].search-input {
+    display: inline;
+    border: none;
+    border-bottom: 2px dotted #4f7326;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #354d1a;
+    box-shadow: none;
+    font-family: "EB Garamond", serif;
+    letter-spacing: 2px;
+    width: 300px;
+    max-width: 400px;
+    margin: 0; }
+    .home-page .search-bar input[type=text].search-input:focus {
+      border-bottom: 2px solid #4f7326;
+      box-shadow: none; }
+    .home-page .search-bar input[type=text].search-input::-webkit-input-placeholder {
+      font-weight: normal;
+      color: rgba(79, 115, 38, 0.5); }
+    .home-page .search-bar input[type=text].search-input::-moz-placeholder {
+      font-weight: normal;
+      color: rgba(79, 115, 38, 0.5); }
+    .home-page .search-bar input[type=text].search-input:-ms-input-placeholder {
+      font-weight: normal;
+      color: rgba(79, 115, 38, 0.5); }
+    .home-page .search-bar input[type=text].search-input:-moz-placeholder {
+      font-weight: normal;
+      color: rgba(79, 115, 38, 0.5); }
+  @media (max-width: 600px) {
+    .home-page .search-bar input[type=text].search-input {
+      text-align: center; } }
+
+.home-page .home-main {
+  padding-top: 20px; }
+  .home-page .home-main .home-row {
+    margin: 0;
+    padding: 20px 0; }
+
+.tags-section {
+  margin: 0;
+  border-bottom: 1px solid #4f7326;
+  border-top: 1px solid #4f7326; }
+  .tags-section.no-border {
+    border: none; }
+  .tags-section .tags-row {
+    font-size: 1.2em;
+    padding: 20px 0;
+    margin: 0; }
+    .tags-section .tags-row .tag-label {
+      color: #4f7326;
+      font-weight: bold; }
+    @media (max-width: 600px) {
+      .tags-section .tags-row .tag-label {
+        display: block; } }
+    .tags-section .tags-row .tag {
+      padding: 10px;
+      color: #4f7326;
+      white-space: nowrap; }
+    @media (max-width: 600px) {
+      .tags-section .tags-row .tag {
+        display: inline-block;
+        padding: 20px 20px 0; } }
+    .tags-section .tags-row .tag:hover {
+      color: #1a260d; }
+
+.no-icons i {
+  display: none; }

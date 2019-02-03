@@ -40,7 +40,8 @@ gulp.task('sass', function () {
 });
 
 gulp.task('watch-sass', function () {
-    gulp.watch(paths.scss, ['sass']);
+    gulp.watch(paths.recipes, ['sass']);
+    gulp.watch(paths.common, ['sass']);
 });
 
 gulp.task('ts', function () {

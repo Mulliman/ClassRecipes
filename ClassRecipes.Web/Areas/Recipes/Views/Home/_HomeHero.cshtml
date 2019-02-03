@@ -1,0 +1,20 @@
+﻿@model ClassRecipes.Web.Areas.Recipes.Models.HomePageModel
+
+<div class="hero-section">
+
+    <div style="overflow:hidden">
+        @Html.RecipeImage(Model.HeroImage, "Blurred image", "hero-background-image blurred")
+    </div>
+    
+    <div class="section hero-content">
+        <div class="container">
+            <div class="row">
+                <h1 class="header center col m10 push-m1 l8 push-l2">Sam's Cook Book</h1>
+            </div>
+
+            @*<div class="row center">
+                <h5 class="header col s8 push-s2 m6 push-m3">No tedious stories<br />No obtrusive advertising<br /> Just simple to follow recipes.</h5>
+            </div>*@
+        </div>
+    </div>
+</div>

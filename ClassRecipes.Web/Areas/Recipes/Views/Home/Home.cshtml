@@ -1,0 +1,38 @@
+﻿@model ClassRecipes.Web.Areas.Recipes.Models.HomePageModel
+
+@{
+    Layout = "_Layout";
+}
+
+<div class="home-page">
+
+    @await Html.PartialAsync("_HomeHero", Model)
+    @await Html.PartialAsync("_SearchBar")
+
+
+    <main class="home-main grey lighten-5">
+        @*<div class="tags-section">
+            <div class="container">
+                <div class="row center no-spacing">
+                    <h3>Popular Tags</h3>
+                </div>
+
+                <div class="row center tags-row">
+                    <span class="tag-label">Tags: </span>
+
+                    @foreach (var tag in (new ClassRecipes.Recipes.Cakes.ChilliChocolateMiniCakes().Tags))
+                    {
+                        @await Html.PartialAsync("~/Areas/Recipes/Views/Recipe/_Tag.cshtml", tag)
+                    }
+                </div>
+            </div>
+        </div>*@
+
+
+        @foreach (var row in Model.Rows)
+        {
+            @await Html.PartialAsync("_HomeRow", row)
+        }
+    </main>
+
+</div>
