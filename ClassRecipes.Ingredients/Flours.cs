@@ -8,5 +8,6 @@ namespace ClassRecipes.Ingredients
         public static Ingredient PlainFlour = new Ingredient("Plain Flour");
         public static Ingredient SelfRaisingFlour = new Ingredient("Self Raising Flour");
         public static Ingredient SpeltFlour = new Ingredient("Spelt Flour");
+        public static Ingredient Cornflour = new Ingredient("Cornflour");
     }
 }

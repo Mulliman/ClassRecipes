@@ -28,6 +28,13 @@
             return Item.Plural;
         }
 
+        public string GetAbbreviatedLabel()
+        {
+            return Unit == null
+                ? $"{LowerAmount}-{HigherAmount}"
+                : $"{LowerAmount}-{HigherAmount} {Unit.Abbreviation}";
+        }
+
         public string GetQuantityLabel()
         {
             return Unit == null 

@@ -314,6 +314,9 @@ html, body {
 .food-site .section-button-row {
   padding-top: 20px; }
 
+.food-site .badge[title] {
+  cursor: help; }
+
 @media only screen and (max-width: 600px) {
   .food-site .collection-item {
     padding: 5px 10px; }

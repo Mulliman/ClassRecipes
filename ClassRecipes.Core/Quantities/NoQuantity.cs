@@ -18,5 +18,10 @@
         {
             return null;
         }
+
+        public string GetAbbreviatedLabel()
+        {
+            return null;
+        }
     }
 }

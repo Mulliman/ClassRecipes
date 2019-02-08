@@ -8,6 +8,8 @@
 
         string ShortIntro { get; }
 
+        string ThumbnailImage { get; }
+
         string ThinImage { get; }
     }
 }

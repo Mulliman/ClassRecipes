@@ -6,7 +6,9 @@
 
         public abstract string ShortIntro { get; }
 
-        public abstract string ThinImage { get; }
+        public virtual string ThinImage { get; }
+
+        public virtual string ThumbnailImage { get; }
 
         // Tiny recipes never have their own page.
         public string UrlName => null;

@@ -22,9 +22,9 @@ namespace ClassRecipes.Web.Areas.Recipes.Models
 
         public int NextStepIndex => Index + 1;
 
-        public IEnumerable<CollectionItemModel> ToolItems => Step?.Tools?.Select(i => new CollectionItemModel(i.GetCorrectSingularOrPlural(), i.GetQuantityLabel()));
+        public IEnumerable<CollectionItemModel> ToolItems => Step?.Tools?.Select(i => new CollectionItemModel(i.GetCorrectSingularOrPlural(), i.GetAbbreviatedLabel(), i.GetQuantityLabel()));
 
-        public IEnumerable<CollectionItemModel> IngredientItems => Step?.Ingredients?.Select(i => new CollectionItemModel(i.GetCorrectSingularOrPlural(), i.GetQuantityLabel()));
+        public IEnumerable<CollectionItemModel> IngredientItems => Step?.Ingredients?.Select(i => new CollectionItemModel(i.GetCorrectSingularOrPlural(), i.GetAbbreviatedLabel(), i.GetQuantityLabel()));
 
         public IEnumerable<CollectionItemModel> ToolsAndIngredients
         {

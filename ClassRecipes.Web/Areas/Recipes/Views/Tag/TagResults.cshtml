@@ -1,1 +1,53 @@
-﻿<h2>Recipes related to {TAG}</h2>
+﻿@model ClassRecipes.Web.Areas.Recipes.Models.Tags.TagsListingModel
+
+@{
+    Layout = "_Layout";
+}
+
+@{ 
+    var first = Model?.Recipes?.FirstOrDefault();
+    var firstImage = first?.BackgroundImagePath;
+}
+
+<div class="tags-page">
+    <div class="hero-section">
+
+        <div style="overflow:hidden">
+            @Html.RecipeImage(firstImage, "Blurred image", "hero-background-image blurred")
+        </div>
+
+        <div class="section hero-content">
+            <div class="container">
+                <div class="row">
+                    <h1 class="header center col m10 push-m1 l8 push-l2">Recipes related to @Model.Tag</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @await Html.PartialAsync("_SearchBar")
+
+    <main class="tags-main grey lighten-5">
+
+        <div class="container">
+            <div class="row">
+                @foreach (var recipe in Model.Recipes)
+                {
+                    <div class="col s6 m4 l4">
+                        <a href="/recipe/@recipe.UrlName" class="card">
+                            <div class="card-image">
+                                @Html.RecipeImage(recipe.ThumbnailImage, recipe.Title)
+                                <span class="card-title">@recipe.Title</span>
+                            </div>
+                            @*<div class="card-action">
+                                    <a href="/recipe/@recipe.UrlName">@recipe.Title</a>
+                                </div>*@
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </main>
+
+</div>

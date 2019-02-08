@@ -4,6 +4,7 @@ namespace ClassRecipes.Tools
 {
     public class PapersAndWraps
     {
+        public static Tool PaperTowels = new Tool("Paper Towels");
         public static Tool BakingPaper = new Tool("Baking Paper");
         public static Tool GreaseproofPaper = new Tool("Greaseproof Paper");
         public static Tool TinFoil = new Tool("Tin Foil");

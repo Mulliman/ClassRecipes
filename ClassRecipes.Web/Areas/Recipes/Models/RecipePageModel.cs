@@ -16,13 +16,13 @@ namespace ClassRecipes.Web.Areas.Recipes.Models
         public CollectionWithHeaderModel IngredientsCollection => new CollectionWithHeaderModel
         {
             Header = "Ingredients",
-            Items = Recipe.Ingredients.Select(i => new CollectionItemModel(i.GetCorrectSingularOrPlural(), i.GetQuantityLabel()))
+            Items = Recipe.Ingredients.Select(i => new CollectionItemModel(i.GetCorrectSingularOrPlural(), i.GetAbbreviatedLabel(), i.GetQuantityLabel()))
         };
 
         public CollectionWithHeaderModel ToolsCollection => new CollectionWithHeaderModel
         {
             Header = "Equipment",
-            Items = Recipe.Tools.Select(i => new CollectionItemModel(i.GetCorrectSingularOrPlural(), i.GetQuantityLabel()))
+            Items = Recipe.Tools.Select(i => new CollectionItemModel(i.GetCorrectSingularOrPlural(), i.GetAbbreviatedLabel(), i.GetQuantityLabel()))
         };
 
         public bool IsLastStep(int currentStepNumber)

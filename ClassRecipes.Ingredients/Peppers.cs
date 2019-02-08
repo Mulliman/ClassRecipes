@@ -9,5 +9,8 @@ namespace ClassRecipes.Ingredients
         public static Ingredient SweetPepper = new Ingredient("Sweet Pepper");
         public static Ingredient BellPepper = new Ingredient("Bell Pepper");
         public static Ingredient PreservedPepper = new Ingredient("Preserved Pepper");
+
+        public static Ingredient WhitePepper = new Ingredient("White Pepper");
+        public static Ingredient BlackPepper = new Ingredient("Black Pepper");
     }
 }

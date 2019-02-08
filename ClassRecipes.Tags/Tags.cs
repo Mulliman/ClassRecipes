@@ -19,6 +19,14 @@ namespace ClassRecipes.Tags
         public static Tag Spicy = new Tag("Spicy");
         public static Tag VerySpicy = new Tag("Very Spicy");
 
+        public static Tag Baked = new Tag("Baked");
+        public static Tag Roasted = new Tag("Roasted");
+        public static Tag Fried = new Tag("Fried");
+
+        public static Tag Potatoes = new Tag("Potatoes");
+        public static Tag Chips = new Tag("Chips");
+        public static Tag Fries = new Tag("Fries");
+
 
         public static Tag Italian = new Tag("Italian");
         public static Tag Spanish = new Tag("Spanish");

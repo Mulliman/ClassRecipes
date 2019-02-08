@@ -9,34 +9,31 @@
             {
                 <h2>@Model.Title</h2>
             }
-
-            @foreach (var recipe in Model.Recipes)
-            {
-                <div class="col s6 m4 l3">
-                    <div class="card">
-                        <div class="card-image">
-                            @Html.RecipeImage(recipe.ThinImage, recipe.Title)
-                            <span class="card-title">@Model.Title</span>
-                        </div>
-                        <div class="card-content">
-                            <p>
-                                @recipe.ShortIntro
-                            </p>
-                        </div>
-                        <div class="card-action">
-                            <a href="/recipe/@recipe.UrlName">View recipe</a>
-                        </div>
-                    </div>
-                </div>
-
-            }
         </div>
 
-        @if (!string.IsNullOrEmpty(Model.LinkText) && !string.IsNullOrEmpty(Model.LinkUrl))
-        {
-            <a href="@Model.LinkUrl">@Model.LinkText</a>
-        }
-    </div>
+        <div class="row">
+                @foreach (var recipe in Model.Recipes)
+                {
+                    <div class="col s6 m4 l4">
+                        <a href="/recipe/@recipe.UrlName" class="card">
+                            <div class="card-image">
+                                @Html.RecipeImage(recipe.ThumbnailImage, recipe.Title)
+                                <span class="card-title">@recipe.Title</span>
+                            </div>
+                            @*<div class="card-action">
+                                <a href="/recipe/@recipe.UrlName">@recipe.Title</a>
+                            </div>*@
+                        </a>
+                    </div>
+
+                }
+            </div>
+
+            @if (!string.IsNullOrEmpty(Model.LinkText) && !string.IsNullOrEmpty(Model.LinkUrl))
+            {
+                <a href="@Model.LinkUrl">@Model.LinkText</a>
+            }
+        </div>
 
 
 </div>

@@ -7,5 +7,7 @@
         string GetQuantityLabel();
 
         string GetCorrectSingularOrPlural();
+
+        string GetAbbreviatedLabel();
     }
 }

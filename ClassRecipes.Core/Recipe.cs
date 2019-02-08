@@ -1,6 +1,7 @@
 ﻿using ClassRecipes.Core.Quantities;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ClassRecipes.Core
 {
@@ -15,6 +16,8 @@ namespace ClassRecipes.Core
         public abstract string ShortIntro { get; }
 
         public abstract IEnumerable<Tag> Tags { get; }
+
+        public virtual string ThumbnailImage => FinishingImagePaths?.FirstOrDefault();
 
         public virtual string ThinImage { get; }
 

@@ -21,6 +21,26 @@
             return (Amount == 1 || Unit != null) ? Item?.Singular : Item?.Plural;
         }
 
+        public string GetAbbreviatedLabel()
+        {
+            if (Amount == 1)
+            {
+                if (Unit == null)
+                {
+                    return "1";
+                }
+
+                return $"1 {Unit.Abbreviation}";
+            }
+
+            if (Unit == null)
+            {
+                return $"{Amount}";
+            }
+
+            return $"{Amount} {Unit.Abbreviation}";
+        }
+
         public string GetQuantityLabel()
         {
             if(Amount == 1)
