@@ -201,5 +201,7 @@ this cake has a slightly spicy, smoky after taste and a deep moist chocolatey fl
         public override string BackgroundImagePath => "chilli-cake-2.jpg";
 
         public override IEnumerable<IRelatedRecipe> RelatedFinishingRecipes => new IRelatedRecipe[] { new CayenneChocolateButtercreamTinyRecipe(), new ChilliSyrupTinyRecipe() };
+
+        public override int AmountOfPortions => 30;
     }
 }

@@ -39,14 +39,28 @@ html, body {
         letter-spacing: $button-letter-spacing;
     }
 
+    .big-action.brand-green.lighten-4:hover{
+        background-color: $brand-colour-l3 !important;
+    }
+    
     .section-button-row {
         padding-top: 20px;
     }
 
-    .badge[title]{
-        cursor:help;
+    .badge[title] {
+        cursor: help;
     }
-    
+
+    .gradient-overlay::after {
+        display: block;
+        position: relative;
+        background-image: linear-gradient(to bottom, transparent 0%, black 100%);
+        margin-top: -150px;
+        height: 150px;
+        width: 100%;
+        content: '';
+    }
+
     @media only screen and (max-width : 600px) {
         .collection-item {
             padding: 5px 10px;

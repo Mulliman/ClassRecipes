@@ -20,7 +20,7 @@ namespace ClassRecipes.Recipes.Potatoes
         private IQuantity<Ingredient> _vinegar = new Quantity<Ingredient>(Vinegars.Vinegar, 1, Units.Tablespoon);
         private IQuantity<Ingredient> _salt = new Quantity<Ingredient>(Salts.Salt, 1, Units.Tablespoon);
 
-        public override string Title => "Almost as Good as Fried Oven Chips";
+        public override string Title => "'Almost as Good as Fried' Oven Chips";
 
         public override string UrlName => "almost-as-good-as-fried-oven-chips";
 
@@ -124,5 +124,7 @@ namespace ClassRecipes.Recipes.Potatoes
                 },
             }
         };
+
+        public override int AmountOfPortions => 2;
     }
 }

@@ -4,7 +4,7 @@
     Layout = "_Layout";
 }
 
-@{ 
+@{
     var first = Model?.Recipes?.FirstOrDefault();
     var firstImage = first?.BackgroundImagePath;
 }
@@ -19,7 +19,7 @@
         <div class="section hero-content">
             <div class="container">
                 <div class="row">
-                    <h1 class="header center col m10 push-m1 l8 push-l2">Recipes related to @Model.Tag</h1>
+                    <h1 class="header center col m10 push-m1 l8 push-l2">Recipes tagged with '@Model.Tag'</h1>
                 </div>
             </div>
         </div>
@@ -27,26 +27,38 @@
 
     @await Html.PartialAsync("_SearchBar")
 
-    <main class="tags-main grey lighten-5">
+    <main class="listing-main grey lighten-5">
 
         <div class="container">
             <div class="row">
                 @foreach (var recipe in Model.Recipes)
                 {
-                    <div class="col s6 m4 l4">
-                        <a href="/recipe/@recipe.UrlName" class="card">
-                            <div class="card-image">
-                                @Html.RecipeImage(recipe.ThumbnailImage, recipe.Title)
-                                <span class="card-title">@recipe.Title</span>
+                    <div class="col s12 m6">
+                        <div class="card sticky-action">
+                            <div class="card-image activator">
+                                <div class="gradient-overlay activator">
+                                    @Html.RecipeImage(recipe.ThumbnailImage, recipe.Title, "activator")
+                                </div>
+
+                                <div class="card-title with-icon activator"><span class="w80 activator">@recipe.Title</span><i class="material-icons right activator">info_outline</i></div>
                             </div>
-                            @*<div class="card-action">
-                                    <a href="/recipe/@recipe.UrlName">@recipe.Title</a>
-                                </div>*@
-                        </a>
+                            <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+                                <h6>@recipe.Title</h6>
+                                <p>
+                                    @recipe.ShortIntro
+                                </p>
+                            </div>
+                            <a href="/recipe/@recipe.UrlName" class="card-action big-action brand-green lighten-4">
+                                <span class="brand-green-text darken-3">View recipe</span><i class="material-icons right brand-green-text darken-3">arrow_forward</i>
+                            </a>
+                        </div>
                     </div>
+
                 }
             </div>
         </div>
+
 
     </main>
 

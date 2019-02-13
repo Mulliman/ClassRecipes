@@ -140,5 +140,7 @@ namespace ClassRecipes.Recipes.Lasagne
         {
             "Refrigerate any leftovers in a sealed container and eat within 3 days. Reheat at full power (900w) in the microwave for 2-3 minutes. Make sure that the leftovers are hot all the way through."
         };
+
+        public override int AmountOfPortions => 2;
     }
 }

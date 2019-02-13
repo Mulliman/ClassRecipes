@@ -45,5 +45,8 @@ namespace ClassRecipes.Tags
         public static Tag PhonyEnglish = new Tag("Phony English");
         public static Tag PhonyAmerican = new Tag("Phony American");
         public static Tag PhonyMexican = new Tag("Phony Mexican");
+
+        public static Tag Pizza = new Tag("Pizza");
+        public static Tag DeepPan = new Tag("Deep Pan");
     }
 }

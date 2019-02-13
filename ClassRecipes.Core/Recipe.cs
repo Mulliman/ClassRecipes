@@ -29,6 +29,8 @@ namespace ClassRecipes.Core
 
         public abstract TimeSpan TotalTime { get; }
 
+        public abstract int AmountOfPortions { get; }
+
         public abstract IEnumerable<IQuantity<Ingredient>> Ingredients { get; }
 
         public abstract IEnumerable<IQuantity<Tool>> Tools { get; }
